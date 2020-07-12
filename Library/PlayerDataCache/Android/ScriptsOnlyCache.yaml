@@ -8,6 +8,7 @@ ScriptsOnlyBuild:
     - PlayerFollow
     - PlayerMovement
     - PlayerState
+    - TreeScript
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     UnityEditor.Graphs.dll:
@@ -52,6 +53,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 64
       Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
@@ -90,6 +93,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 63938}
     - Class: 114
       Script: {instanceID: 76122}
+    - Class: 114
+      Script: {instanceID: 99222}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 136
@@ -537,7 +542,7 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 810376a51563d1795ee8cfabd45e0d54
+      Hash: 347942f3871ab0a75a5228bf9c21a76b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerMovement
@@ -613,6 +618,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerState
+  - hash:
+      serializedVersion: 2
+      Hash: 6dd62400f09b1a008bb2c7ce057a75d7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TreeScript
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity

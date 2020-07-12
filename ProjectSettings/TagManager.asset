@@ -9,8 +9,14 @@ TagManager:
   - Fire
   - JumpButton
   - AttackButton
-  - Meele Weapon
   - Projectile Weapon
+  - Melee Weapon
+  - Axe
+  - Wood
+  - Rock Piece
+  - Wood Piece
+  - Rock
+  - Tree
   layers:
   - Default
   - TransparentFX

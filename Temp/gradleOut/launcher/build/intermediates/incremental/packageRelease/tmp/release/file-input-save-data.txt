@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sat Jul 11 18:02:31 BRT 2020
+#Sun Jul 12 19:36:59 BRT 2020
 60.set=ASSET
 52.set=NATIVE_RESOURCE
 53.base=/home/emerson/Projects/unity/Jumping Joe/Temp/gradleOut/launcher/build/intermediates/merged_assets/release/out

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour {
 
@@ -18,6 +19,7 @@ public class PlayerMovement : MonoBehaviour {
 	protected Joystick joystick;
 	public FixedButton jumpButton;
 	public FixedButton attackButton;
+	public FixedButton pickUpButton;
 
 	void Start(){
 		joystick = FindObjectOfType<Joystick>();
@@ -66,4 +68,17 @@ public class PlayerMovement : MonoBehaviour {
     private bool IsGrounded() {
     	return Physics.Raycast(transform.position, Vector3.down, distToGround);
     }
+
+	private void OnTriggerEnter(Collider other){
+		if(TagUtils.collectableItemTags.Contains(other.tag)) {
+			pickUpButton.GetComponent<Image>().enabled = true;
+		}
+		Debug.Log(other.tag);
+	}
+	private void OnTriggerExit(Collider other){
+		if(TagUtils.collectableItemTags.Contains(other.tag)) {
+			pickUpButton.GetComponent<Image>().enabled = false;
+		}
+		Debug.Log(other);
+	}
 }

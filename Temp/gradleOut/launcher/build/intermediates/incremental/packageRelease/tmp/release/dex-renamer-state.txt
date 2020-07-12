@@ -1,4 +1,4 @@
-#Sat Jul 11 18:02:30 BRT 2020
+#Sun Jul 12 19:36:59 BRT 2020
 base.0=/home/emerson/Projects/unity/Jumping Joe/Temp/gradleOut/launcher/build/intermediates/transforms/dexMerger/release/0
 path.0=classes.dex
 renamed.0=classes.dex
