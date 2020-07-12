@@ -54,11 +54,6 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	private void checkJoystickAndSetState(Joystick joystick){
-		//Right H=1 V=0
-		//Left H=-1 V=0
-		//Up H=0 V=1
-		//Down H=0 V=-1
-		Debug.Log("H: " + joystick.Horizontal + "\n V: " +  joystick.Vertical);
 		if((joystick.Horizontal > 0.5 || joystick.Vertical > 0.5) || (joystick.Horizontal < -0.5 || joystick.Vertical < -0.5) ){
     		playerState.currentPlayerState = PlayerState.Running;
     	} else if((joystick.Horizontal > 0 || joystick.Vertical > 0) || (joystick.Horizontal < 0 || joystick.Vertical < 0) ){
@@ -67,6 +62,7 @@ public class PlayerMovement : MonoBehaviour {
     		playerState.currentPlayerState = PlayerState.Idle;
     	}
 	}
+
     private bool IsGrounded() {
     	return Physics.Raycast(transform.position, Vector3.down, distToGround);
     }

@@ -7,9 +7,10 @@ TagManager:
   - Obstacle
   - Ground
   - Fire
-  - Weapon
   - JumpButton
   - AttackButton
+  - Meele Weapon
+  - Projectile Weapon
   layers:
   - Default
   - TransparentFX
