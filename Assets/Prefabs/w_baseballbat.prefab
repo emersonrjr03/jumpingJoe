@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 3215802212685031778}
   - component: {fileID: 1510155853}
   - component: {fileID: 1510155852}
+  - component: {fileID: 1991311999}
+  - component: {fileID: 1991312000}
   m_Layer: 0
   m_Name: w_baseballbat
   m_TagString: Melee Weapon
@@ -111,3 +113,33 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1991311999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8681989589094648175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ef1904428a560087bce8fc9db683589, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 3
+  interactionTransform: {fileID: 2549024372510562588}
+  pickupButton: {fileID: 0}
+  item: {fileID: 11400000, guid: e80e77c779568d7d8ae4d13ed9f8afda, type: 2}
+--- !u!114 &1991312000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8681989589094648175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 256d407be4b942dc197f560fd274a022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 0.15104198, g: 0.9056604, b: 0.085439645, a: 1}
+  meshRenderer: {fileID: 0}

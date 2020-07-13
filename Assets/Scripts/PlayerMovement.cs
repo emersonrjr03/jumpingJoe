@@ -70,15 +70,18 @@ public class PlayerMovement : MonoBehaviour {
     }
 
 	private void OnTriggerEnter(Collider other){
-		if(TagUtils.collectableItemTags.Contains(other.tag)) {
+		ColorOnHover colorOnHover = other.GetComponent<ColorOnHover>();
+		if(colorOnHover != null){
+			colorOnHover.fireColoring();
 			pickUpButton.GetComponent<Image>().enabled = true;
 		}
-		Debug.Log(other.tag);
 	}
+	
 	private void OnTriggerExit(Collider other){
-		if(TagUtils.collectableItemTags.Contains(other.tag)) {
+		ColorOnHover colorOnHover = other.GetComponent<ColorOnHover>();
+		if(colorOnHover != null){
+			colorOnHover.undoColoring();
 			pickUpButton.GetComponent<Image>().enabled = false;
 		}
-		Debug.Log(other);
 	}
 }
