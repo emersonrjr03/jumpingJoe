@@ -10,20 +10,18 @@ using UnityEngine.AI;
 [RequireComponent(typeof(ColorOnHover))]
 public class Interactable : MonoBehaviour {
 
-	public float radius = 3f;
 	public Transform interactionTransform;
 
 	Transform player;		// Reference to the player transform
 
-	bool hasInteracted = false;	// Have we already interacted with the object?
+	[HideInInspector]
+	public bool isInteractable = false;	// Have we already interacted with the object?
 
 	public FixedButton pickupButton;
 	
 	void Update () {
-		if (pickupButton.pressed) {
+		if (pickupButton.pressed && isInteractable ) {
 			Debug.Log("Interacting");
-			// Interact with the object
-			hasInteracted = true;
 			Interact();
 		}
 	}
@@ -32,11 +30,6 @@ public class Interactable : MonoBehaviour {
 	// This method is meant to be overwritten
 	public virtual void Interact () {
 		
-	}
-
-	void OnDrawGizmosSelected () {
-		Gizmos.color = Color.yellow;
-		Gizmos.DrawWireSphere(interactionTransform.position, radius);
 	}
 
 } 	

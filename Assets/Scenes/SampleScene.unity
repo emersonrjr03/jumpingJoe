@@ -1321,16 +1321,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
-    - target: {fileID: 1478067101896859499, guid: afe715f39038d45f8b74a3bbd6736f98,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.3474
-      objectReference: {fileID: 0}
     - target: {fileID: 2405687907574993083, guid: afe715f39038d45f8b74a3bbd6736f98,
         type: 3}
       propertyPath: m_Name
       value: w_axe
       objectReference: {fileID: 0}
+    - target: {fileID: 6072165274533147695, guid: afe715f39038d45f8b74a3bbd6736f98,
+        type: 3}
+      propertyPath: pickupButton
+      value: 
+      objectReference: {fileID: 115748632}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afe715f39038d45f8b74a3bbd6736f98, type: 3}
 --- !u!1 &476577803
@@ -2467,6 +2467,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1019049371, guid: 0fde05fa0f3321942a21896ff4f0856f, type: 3}
+      propertyPath: pickupButton
+      value: 
+      objectReference: {fileID: 115748632}
     - target: {fileID: 4680757731159730826, guid: 0fde05fa0f3321942a21896ff4f0856f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3843,6 +3847,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1379981157, guid: b9de24523a11d714db3851b5f0f9d527, type: 3}
+      propertyPath: pickupButton
+      value: 
+      objectReference: {fileID: 115748632}
     - target: {fileID: 1493958779012120596, guid: b9de24523a11d714db3851b5f0f9d527,
         type: 3}
       propertyPath: m_Name

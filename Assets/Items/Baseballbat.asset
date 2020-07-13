@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Baseballbat
   m_EditorClassIdentifier: 
   name: Baseball Bat
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 77fa336314d201ac29cecef027401481, type: 3}
   isDefaultItem: 0

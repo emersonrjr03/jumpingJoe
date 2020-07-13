@@ -69,10 +69,15 @@ public class PlayerMovement : MonoBehaviour {
     	return Physics.Raycast(transform.position, Vector3.down, distToGround);
     }
 
+	private ArrayList colliders = new ArrayList();
+	
 	private void OnTriggerEnter(Collider other){
 		ColorOnHover colorOnHover = other.GetComponent<ColorOnHover>();
 		if(colorOnHover != null){
+			colliders.Add(other);
+			Debug.Log("colision on " + pickUpButton.GetComponent<Image>().enabled);
 			colorOnHover.fireColoring();
+			other.GetComponent<Interactable>().isInteractable = true; 
 			pickUpButton.GetComponent<Image>().enabled = true;
 		}
 	}
@@ -80,8 +85,11 @@ public class PlayerMovement : MonoBehaviour {
 	private void OnTriggerExit(Collider other){
 		ColorOnHover colorOnHover = other.GetComponent<ColorOnHover>();
 		if(colorOnHover != null){
+			colliders.Remove(other);
+			Debug.Log("colision off " + pickUpButton.GetComponent<Image>().enabled);
 			colorOnHover.undoColoring();
-			pickUpButton.GetComponent<Image>().enabled = false;
+			other.GetComponent<Interactable>().isInteractable = false; 
+			pickUpButton.GetComponent<Image>().enabled = colliders.Count != 0;
 		}
 	}
 }
