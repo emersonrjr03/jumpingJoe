@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 221554290}
   m_Layer: 0
   m_Name: w_baseballbat
-  m_TagString: Melee Weapon
+  m_TagString: Axe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -227,10 +227,10 @@ GameObject:
   - component: {fileID: 7478225697108807222}
   - component: {fileID: 605990072}
   - component: {fileID: 605990078}
-  - component: {fileID: 605990073}
   - component: {fileID: 605990074}
   - component: {fileID: 605990075}
   - component: {fileID: 605990079}
+  - component: {fileID: 605990081}
   m_Layer: 0
   m_Name: TT_demo_male_A
   m_TagString: Untagged
@@ -303,19 +303,6 @@ CapsuleCollider:
   m_Height: 1.943799
   m_Direction: 1
   m_Center: {x: 0, y: 0.88158655, z: 0}
---- !u!114 &605990073
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7478225697116208144}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff6bf5358b4fc0eb0899b5fafeffea21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movement: {fileID: 605990074}
 --- !u!114 &605990074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,6 +325,7 @@ MonoBehaviour:
   playerState: {fileID: 605990079}
   jumpButton: {fileID: 0}
   attackButton: {fileID: 0}
+  pickUpButton: {fileID: 0}
 --- !u!114 &605990075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -364,6 +352,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentPlayerState: 
+--- !u!135 &605990081
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7478225697116208144}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.2171717
+  m_Center: {x: 0, y: 0.10492039, z: 0}
 --- !u!1 &7478225697116208148
 GameObject:
   m_ObjectHideFlags: 0
