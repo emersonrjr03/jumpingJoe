@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour
 {
-	public GameObject inventoryUI;	// The entire UI
+	public GameObject inventoryUI;	// The entire inventory UI
+	public GameObject currentWeaponSlotUI;
 	public Transform itemsParent;	// The parent object of all the items
 	public FixedButton openInventoryButton;
 	public FixedButton closeInventoryButton;
@@ -15,6 +16,7 @@ public class InventoryUI : MonoBehaviour
 	void Start () {
 		inventory = Inventory.instance;
 		inventory.onItemChangedCallback += UpdateUI;
+		inventory.onItemEquipedCallback += UpdateCurrentWeaponSlotUI;
 	}
 
 	// Check to see if we should open/close the inventory
@@ -44,6 +46,13 @@ public class InventoryUI : MonoBehaviour
 			} else {
 				slots[i].ClearSlot();
 			}
+		}
+	}
+	
+	public void UpdateCurrentWeaponSlotUI(Item item){
+		CurrentItemSlot[] slots = currentWeaponSlotUI.GetComponentsInChildren<CurrentItemSlot>();
+		for (int i = 0; i < slots.Length; i++) {
+			slots[i].AddItem(item);
 		}
 	}
 }

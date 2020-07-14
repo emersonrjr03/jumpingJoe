@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using System.Collections.Generic;
 
 /*	
 	This component is for all objects that the player can
@@ -12,16 +13,26 @@ public class Interactable : MonoBehaviour {
 
 	public Transform interactionTransform;
 
-	Transform player;		// Reference to the player transform
-
 	[HideInInspector]
 	public bool isInteractable = false;	// Have we already interacted with the object?
 
 	public FixedButton pickupButton;
 	
+	void Start() {
+		//finding pickup button on screen and assign to the item, so we don't have to assign for every prefab.
+		if(pickupButton == null){
+			Object[] objects = FindObjectsOfType<FixedButton>() as UnityEngine.Object[];
+			for (int i = 0; i < objects.Length; i++){;
+				FixedButton fixedButtonGO = objects[i] as FixedButton;
+				if(fixedButtonGO.tag == "PickUpButton"){
+					pickupButton = fixedButtonGO;
+					break;
+				}
+			}
+		}
+	}
 	void Update () {
 		if (pickupButton.pressed && isInteractable ) {
-			Debug.Log("Interacting");
 			Interact();
 		}
 	}

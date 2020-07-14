@@ -17,6 +17,7 @@ TagManager:
   - Wood Piece
   - Rock
   - Tree
+  - PickUpButton
   layers:
   - Default
   - TransparentFX

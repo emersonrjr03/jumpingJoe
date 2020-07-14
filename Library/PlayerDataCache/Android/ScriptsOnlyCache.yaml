@@ -2,8 +2,15 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - AnimControl
+    - ColorOnHover
+    - CurrentItemSlot
     - FixedButton
     - FixedJoystick
+    - Inventory
+    - InventorySlot
+    - InventoryUI
+    - Item
+    - ItemPickup
     - PlayerFollow
     - PlayerMovement
     - PlayerState
@@ -26,9 +33,12 @@ ScriptsOnlyBuild:
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.GridLayoutGroup
     - UnityEngine.UI.Image
+    - UnityEngine.UI.Text
   sceneClasses:
     Assets/Scenes/SampleScene.unity:
     - Class: 1
@@ -76,7 +86,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11444}
     - Class: 114
+      Script: {instanceID: 11492}
+    - Class: 114
+      Script: {instanceID: 11584}
+    - Class: 114
       Script: {instanceID: 11918}
+    - Class: 114
+      Script: {instanceID: 12304}
     - Class: 114
       Script: {instanceID: 12384}
     - Class: 114
@@ -95,7 +111,23 @@ ScriptsOnlyBuild:
       Script: {instanceID: 13150}
     - Class: 114
       Script: {instanceID: 36126}
+    - Class: 114
+      Script: {instanceID: 49372}
+    - Class: 114
+      Script: {instanceID: 49384}
+    - Class: 114
+      Script: {instanceID: 49784}
+    - Class: 114
+      Script: {instanceID: 49790}
+    - Class: 114
+      Script: {instanceID: 69116}
+    - Class: 114
+      Script: {instanceID: 69126}
+    - Class: 114
+      Script: {instanceID: 141328}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 135
       Script: {instanceID: 0}
@@ -626,6 +658,66 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: RockScript
+  - hash:
+      serializedVersion: 2
+      Hash: b04d548399136052f80f7efa8a039d23
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Inventory
+  - hash:
+      serializedVersion: 2
+      Hash: 2769c8d5753b6c1b68d2b38918d4224f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Item
+  - hash:
+      serializedVersion: 2
+      Hash: e1fe7e9038d96b255a3b305285fb80b2
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: InventoryUI
+  - hash:
+      serializedVersion: 2
+      Hash: 9b2a096955c53f2e75cf4e9af6af02cd
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: InventorySlot
+  - hash:
+      serializedVersion: 2
+      Hash: ec27467e4f631c10c26f1a8fbdff9dd7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Interactable
+  - hash:
+      serializedVersion: 2
+      Hash: e58fb31af705ad685030be9720a048c9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ColorOnHover
+  - hash:
+      serializedVersion: 2
+      Hash: cc02b99a7051c53fdc619b92c9d3a2ea
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ItemPickup
+  - hash:
+      serializedVersion: 2
+      Hash: badc8d355a63a7b0291547b12e2277fc
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: IconGeneratorUIExample
+  - hash:
+      serializedVersion: 2
+      Hash: b1397d731656620ba1a710519c4e02a2
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: IconGenerator
+  - hash:
+      serializedVersion: 2
+      Hash: a1bf635396aab30e2e06177ccab020a6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CurrentItemSlot
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
