@@ -29,6 +29,9 @@ public class Inventory : MonoBehaviour {
 	public delegate void OnItemEquiped(Item item);
 	public OnItemEquiped onItemEquipedCallback;
 	
+	public delegate void OnItemRemoved(Item item);
+	public OnItemEquiped onItemRemovedCallback;
+	
 	public int space = 20;	// Amount of slots in inventory
 
 	// Current list of items in inventory
@@ -66,6 +69,11 @@ public class Inventory : MonoBehaviour {
 		// Trigger callback
 		if (onItemChangedCallback != null)
 			onItemChangedCallback.Invoke();
+		if(item.isCurrentItem){
+			// Trigger to call the clearing of the currentItem slot
+			if (onItemRemovedCallback != null)
+				onItemRemovedCallback.Invoke(item);
+		}
 	}
 
 }

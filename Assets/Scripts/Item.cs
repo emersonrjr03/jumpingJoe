@@ -8,28 +8,18 @@ public class Item : ScriptableObject {
 	new public string name = "New Item";	// Name of the item
 	public Sprite icon = null;	
 	[HideInInspector]			// Item icon
-	public bool isCurrentWeapon = false;      // Is the item default wear?
+	public bool isCurrentItem = false;      // Is the item default wear?
 	public ItemType itemType;
 	
 	// Called when the item is pressed in the inventory
 	public virtual void Use ()
 	{
-		if(itemType == ItemType.Weapon) {
+		/*if(itemType == ItemType.Weapon || itemType == ItemType.Material) {
 			isCurrentWeapon = true;
-			Inventory.instance.EquipItem(this);
-		} else	if(itemType == ItemType.Food) {
-			Debug.Log("Equip " + itemType);
-		} else	if(itemType == ItemType.Building) {
-			Debug.Log("Equip " + itemType);
-		} else	if(itemType == ItemType.Material) {
-			Debug.Log("Equip " + itemType);
 		}
-		// Use the item
-		//If it's a weapon, we equip it
-		//If it's a construction thing, we will add it to the quick placing slot
-		//If it's food, we will eat it and recover HP
+		Inventory.instance.EquipItem(this);*/
 
-		Debug.Log("Using " + name);
+		Debug.Log("Using item " + name + " on quick access");
 	}
 
 	public void RemoveFromInventory ()

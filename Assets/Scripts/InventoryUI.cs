@@ -7,6 +7,9 @@ public class InventoryUI : MonoBehaviour
 {
 	public GameObject inventoryUI;	// The entire inventory UI
 	public GameObject currentWeaponSlotUI;
+	public GameObject currentFoodSlotUI;
+	public GameObject currentBuildingSlotUI;
+	
 	public Transform itemsParent;	// The parent object of all the items
 	public FixedButton openInventoryButton;
 	public FixedButton closeInventoryButton;
@@ -16,7 +19,8 @@ public class InventoryUI : MonoBehaviour
 	void Start () {
 		inventory = Inventory.instance;
 		inventory.onItemChangedCallback += UpdateUI;
-		inventory.onItemEquipedCallback += UpdateCurrentWeaponSlotUI;
+		inventory.onItemEquipedCallback += UpdateCurrentItemSlotUI;
+		inventory.onItemRemovedCallback += RemoveFromCurrentItemSlotUI;
 	}
 
 	// Check to see if we should open/close the inventory
@@ -49,10 +53,36 @@ public class InventoryUI : MonoBehaviour
 		}
 	}
 	
-	public void UpdateCurrentWeaponSlotUI(Item item){
-		CurrentItemSlot[] slots = currentWeaponSlotUI.GetComponentsInChildren<CurrentItemSlot>();
+	public void UpdateCurrentItemSlotUI(Item item){
+		//Just get the CurrentItemSlot component that is inside the CurrentItemSlot
+		
+		CurrentItemSlot[] slots = new CurrentItemSlot[0];
+		Debug.Log("checking where " + item.itemType + " will go");
+		if(item.itemType == Item.ItemType.Weapon || item.itemType == Item.ItemType.Material) {
+			slots = currentWeaponSlotUI.GetComponentsInChildren<CurrentItemSlot>();
+		} else if(item.itemType == Item.ItemType.Food) {
+			slots = currentFoodSlotUI.GetComponentsInChildren<CurrentItemSlot>();		
+		} else if(item.itemType == Item.ItemType.Building) {
+			slots = currentBuildingSlotUI.GetComponentsInChildren<CurrentItemSlot>();
+		}
+
 		for (int i = 0; i < slots.Length; i++) {
-			slots[i].AddItem(item);
+			slots[i].PlaceItem(item);
+		}
+	}
+	
+	public void RemoveFromCurrentItemSlotUI(Item item){
+		CurrentItemSlot[] slots = new CurrentItemSlot[0];
+		Debug.Log("removing " + item.itemType + " from currentItem");
+		if(item.itemType == Item.ItemType.Weapon || item.itemType == Item.ItemType.Material) {
+			slots = currentWeaponSlotUI.GetComponentsInChildren<CurrentItemSlot>();
+		} else if(item.itemType == Item.ItemType.Food) {
+			slots = currentFoodSlotUI.GetComponentsInChildren<CurrentItemSlot>();		
+		} else if(item.itemType == Item.ItemType.Building) {
+			slots = currentBuildingSlotUI.GetComponentsInChildren<CurrentItemSlot>();
+		}
+		for (int i = 0; i < slots.Length; i++) {
+			slots[i].ClearItem();
 		}
 	}
 }

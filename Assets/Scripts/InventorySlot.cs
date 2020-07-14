@@ -9,6 +9,12 @@ public class InventorySlot : MonoBehaviour {
 	public Button removeButton;
 	Item item;
 	
+	Inventory inventory;	// Our current inventory
+
+	void Start () {
+		inventory = Inventory.instance;
+	}
+	
 	public void AddItem(Item newItem) {
 		item = newItem;
 		icon.sprite = item.icon;
@@ -27,9 +33,9 @@ public class InventorySlot : MonoBehaviour {
 		Inventory.instance.Remove(item);
 	}
 	
-	public void UseItem() {
+	public void EquipItem() {
 		if(item != null) {
-			item.Use();
+			Inventory.instance.EquipItem(item);
 		}
 	}
 }

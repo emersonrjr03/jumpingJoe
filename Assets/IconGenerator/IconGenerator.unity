@@ -597,16 +597,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targets:
-  - name: Branch
-    obj: {fileID: 1493958779012120596, guid: b9de24523a11d714db3851b5f0f9d527, type: 3}
-  - name: Baseball Bat
-    obj: {fileID: 8681989589094648175, guid: a777d1b49da24a68aa8a4a2ca1b65918, type: 3}
-  - name: Axe
-    obj: {fileID: 2405687907574993083, guid: afe715f39038d45f8b74a3bbd6736f98, type: 3}
-  - name: Rock
-    obj: {fileID: 7405846476849542632, guid: c6308cb7062fac34e8e50600086b12a1, type: 3}
+  - name: Branch of Life
+    obj: {fileID: 4170110183300015995, guid: 4534500d0658794d19689a90ad1f487e, type: 3}
   overlays: []
-  customFolder: 
+  customFolder: Items
   rawIcon: {fileID: 0}
   icon: {fileID: 0}
   overlayIcons: []
