@@ -80,6 +80,8 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
+      Script: {instanceID: 0}
+    - Class: 114
       Script: {instanceID: 11312}
     - Class: 114
       Script: {instanceID: 11332}
@@ -125,6 +127,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 69126}
     - Class: 114
       Script: {instanceID: 141328}
+    - Class: 114
+      Script: {instanceID: 320188}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -682,7 +686,7 @@ ScriptsOnlyBuild:
     className: InventoryUI
   - hash:
       serializedVersion: 2
-      Hash: 9b2a096955c53f2e75cf4e9af6af02cd
+      Hash: a1bf635396aab30e2e06177ccab020a6
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: InventorySlot

@@ -36,10 +36,8 @@ public class InventorySlot : MonoBehaviour, IDragHandler, IBeginDragHandler, IEn
 	public void EquipItem() {
 		if(item != null) {
 			if(Inventory.instance.isSlotSelected(this)){
-				Debug.Log("equiping");
 				Inventory.instance.EquipItem(item);
 			} else {
-				Debug.Log("selecting");
 				Inventory.instance.SetSelectedSlot(this);
 			}
 

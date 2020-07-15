@@ -24,6 +24,7 @@ public class CurrentItemSlot : MonoBehaviour {
 		item = newItem;
 		icon.sprite = item.icon;
 		icon.enabled = true;
+		AfterPlacingItem();
 	}
 	
 	public void UseItem() {
@@ -42,6 +43,16 @@ public class CurrentItemSlot : MonoBehaviour {
 			item = null;
 			icon.sprite = null;
 			icon.enabled = false;
+		}
+	}
+	
+	private void AfterPlacingItem(){
+		if(item.itemType == Item.ItemType.Weapon || item.itemType == Item.ItemType.Material) {
+			GameController.instance.changePlayerCurrentWeapon(item);
+		} else if(item.itemType == Item.ItemType.Food) {
+		
+		} else if(item.itemType == Item.ItemType.Building) {
+
 		}
 	}
 	

@@ -21,6 +21,8 @@ TagManager:
   - Item Icon
   - Inventory UI
   - Inventory Slot
+  - Player Left Hand
+  - Player Right Hand
   layers:
   - Default
   - TransparentFX

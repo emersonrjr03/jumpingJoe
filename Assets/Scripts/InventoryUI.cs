@@ -55,9 +55,7 @@ public class InventoryUI : MonoBehaviour
 	
 	public void UpdateCurrentItemSlotUI(Item item){
 		//Just get the CurrentItemSlot component that is inside the CurrentItemSlot
-		
 		CurrentItemSlot[] slots = new CurrentItemSlot[0];
-		Debug.Log("checking where " + item.itemType + " will go");
 		if(item.itemType == Item.ItemType.Weapon || item.itemType == Item.ItemType.Material) {
 			slots = currentWeaponSlotUI.GetComponentsInChildren<CurrentItemSlot>();
 		} else if(item.itemType == Item.ItemType.Food) {
@@ -73,7 +71,6 @@ public class InventoryUI : MonoBehaviour
 	
 	public void RemoveFromCurrentItemSlotUI(Item item){
 		CurrentItemSlot[] slots = new CurrentItemSlot[0];
-		Debug.Log("removing " + item.itemType + " from currentItem");
 		if(item.itemType == Item.ItemType.Weapon || item.itemType == Item.ItemType.Material) {
 			slots = currentWeaponSlotUI.GetComponentsInChildren<CurrentItemSlot>();
 		} else if(item.itemType == Item.ItemType.Food) {
