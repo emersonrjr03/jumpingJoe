@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CurrentItemSlot : MonoBehaviour
-{
+public class CurrentItemSlot : MonoBehaviour {
     public Image icon;
 	Item item;
+	
 	private InventoryUI inventoryUI;
 	
 	public void Start(){
@@ -14,7 +14,6 @@ public class CurrentItemSlot : MonoBehaviour
 		InventoryUI[] inventoryUIArray = transform.parent.parent.gameObject.GetComponentsInChildren<InventoryUI>();
 		for (int i = 0; i < inventoryUIArray.Length; i++) {
 			inventoryUI = inventoryUIArray[0]; 
-			Debug.Log(inventoryUI);
 		}
 	}
 	public void PlaceItem(Item newItem) {
@@ -46,6 +45,4 @@ public class CurrentItemSlot : MonoBehaviour
 		}
 	}
 	
-	private void openInventoryUI() {
-	}
 }

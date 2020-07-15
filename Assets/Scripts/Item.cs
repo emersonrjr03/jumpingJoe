@@ -10,6 +10,7 @@ public class Item : ScriptableObject {
 	[HideInInspector]			// Item icon
 	public bool isCurrentItem = false;      // Is the item default wear?
 	public ItemType itemType;
+	public GameObject prefab;
 	
 	// Called when the item is pressed in the inventory
 	public virtual void Use ()

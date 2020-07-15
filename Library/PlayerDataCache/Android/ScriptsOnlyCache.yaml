@@ -139,6 +139,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 196
       Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
+      Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
     - Class: 222
@@ -666,13 +670,13 @@ ScriptsOnlyBuild:
     className: Inventory
   - hash:
       serializedVersion: 2
-      Hash: 2769c8d5753b6c1b68d2b38918d4224f
+      Hash: e82a92667ce8735d8d9e1f01d105a2f0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Item
   - hash:
       serializedVersion: 2
-      Hash: e1fe7e9038d96b255a3b305285fb80b2
+      Hash: 5efa8e331b1ebd3527ebd5602d76311a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: InventoryUI
@@ -684,7 +688,7 @@ ScriptsOnlyBuild:
     className: InventorySlot
   - hash:
       serializedVersion: 2
-      Hash: ec27467e4f631c10c26f1a8fbdff9dd7
+      Hash: 4d6da503e42733488e74745be41d8232
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Interactable
@@ -696,7 +700,7 @@ ScriptsOnlyBuild:
     className: ColorOnHover
   - hash:
       serializedVersion: 2
-      Hash: cc02b99a7051c53fdc619b92c9d3a2ea
+      Hash: ca839713e9bfc5d4f4fc2340192ff725
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ItemPickup

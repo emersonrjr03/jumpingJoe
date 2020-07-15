@@ -11,8 +11,6 @@ using System.Collections.Generic;
 [RequireComponent(typeof(ColorOnHover))]
 public class Interactable : MonoBehaviour {
 
-	public Transform interactionTransform;
-
 	[HideInInspector]
 	public bool isInteractable = false;	// Have we already interacted with the object?
 
@@ -22,7 +20,7 @@ public class Interactable : MonoBehaviour {
 		//finding pickup button on screen and assign to the item, so we don't have to assign for every prefab.
 		if(pickupButton == null){
 			Object[] objects = FindObjectsOfType<FixedButton>() as UnityEngine.Object[];
-			for (int i = 0; i < objects.Length; i++){;
+			for (int i = 0; i < objects.Length; i++){
 				FixedButton fixedButtonGO = objects[i] as FixedButton;
 				if(fixedButtonGO.tag == "PickUpButton"){
 					pickupButton = fixedButtonGO;

@@ -75,7 +75,6 @@ public class PlayerMovement : MonoBehaviour {
 		ColorOnHover colorOnHover = other.GetComponent<ColorOnHover>();
 		if(colorOnHover != null){
 			colliders.Add(other);
-			Debug.Log("colision on " + pickUpButton.GetComponent<Image>().enabled);
 			colorOnHover.fireColoring();
 			other.GetComponent<Interactable>().isInteractable = true; 
 			pickUpButton.GetComponent<Image>().enabled = true;
@@ -86,7 +85,6 @@ public class PlayerMovement : MonoBehaviour {
 		ColorOnHover colorOnHover = other.GetComponent<ColorOnHover>();
 		if(colorOnHover != null){
 			colliders.Remove(other);
-			Debug.Log("colision off " + pickUpButton.GetComponent<Image>().enabled);
 			colorOnHover.undoColoring();
 			other.GetComponent<Interactable>().isInteractable = false; 
 			pickUpButton.GetComponent<Image>().enabled = colliders.Count != 0;

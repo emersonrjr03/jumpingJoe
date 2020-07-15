@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4170110183300015995}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.739018, y: 1.2298888, z: 7.0576935}
+  m_LocalPosition: {x: -6.257263, y: 11.447712, z: 6.426664}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 65524633851922211}
@@ -123,7 +123,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef1904428a560087bce8fc9db683589, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionTransform: {fileID: 4170110183299726171}
   isInteractable: 0
   pickupButton: {fileID: 0}
   item: {fileID: 11400000, guid: 59333685cae313e0092cf6251622dd96, type: 2}

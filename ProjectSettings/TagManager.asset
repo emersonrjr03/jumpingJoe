@@ -18,6 +18,7 @@ TagManager:
   - Rock
   - Tree
   - PickUpButton
+  - Item Icon
   layers:
   - Default
   - TransparentFX
