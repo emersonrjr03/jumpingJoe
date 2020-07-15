@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class InventorySlot : MonoBehaviour, IDragHandler, IBeginDragHandler, IDropHandler {
+public class InventorySlot : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler {
 
 	public Image icon;
 	Item item;
-	Vector3 iconInitialPos;
+	Vector2 iconInitialPos;
 	
 	Inventory inventory;	// Our current inventory
 	Camera mainCamera;
@@ -35,13 +35,19 @@ public class InventorySlot : MonoBehaviour, IDragHandler, IBeginDragHandler, IDr
 	
 	public void EquipItem() {
 		if(item != null) {
-			Inventory.instance.EquipItem(item);
+			if(Inventory.instance.isSlotSelected(this)){
+				Debug.Log("equiping");
+				Inventory.instance.EquipItem(item);
+			} else {
+				Debug.Log("selecting");
+				Inventory.instance.SetSelectedSlot(this);
+			}
+
 		}
 	}
 	
 	public void OnBeginDrag(PointerEventData eventData) {
 		if(item != null) {
-			Debug.Log("POSICAO INICIAL " +  icon.gameObject.transform.position);
 			iconInitialPos = icon.gameObject.transform.position;
 			icon.gameObject.transform.position = eventData.position;
 		}
@@ -52,18 +58,19 @@ public class InventorySlot : MonoBehaviour, IDragHandler, IBeginDragHandler, IDr
 			icon.gameObject.transform.position = eventData.position;
 		}
 	}
-	public void OnDrop(PointerEventData eventData){	
-		Debug.Log("Dropping " + item);
+	public void OnEndDrag(PointerEventData eventData) {
 		if(item != null) {
-			Debug.Log( mainCamera.ScreenToWorldPoint(eventData.position));			
+			icon.gameObject.transform.position = iconInitialPos;
 			Vector3 dropPosition = mainCamera.gameObject.transform.position - mainCamera.gameObject.GetComponent<PlayerFollow>().offset;
 			Instantiate(item.prefab, dropPosition, Quaternion.identity);
-			icon.gameObject.transform.position = new Vector3(0f,0f,0f);
-			Inventory.instance.Remove(item);
-		} else {
-			Debug.Log("Resetting " + icon.gameObject.transform.position);
-			icon.gameObject.transform.position = new Vector3(0f,0f,0f);
+			RemoveItemFromInventory(item);
 		}
 	}
 	
+	private void RemoveItemFromInventory(Item item){
+		if(Inventory.instance.isSlotSelected(this)){
+			Inventory.instance.SetSelectedSlot(null);
+		}
+		Inventory.instance.Remove(item);
+	}
 }

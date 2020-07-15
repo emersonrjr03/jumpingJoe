@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6256821949451640372}
   m_Layer: 5
   m_Name: Icon
-  m_TagString: Untagged
+  m_TagString: Item Icon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35,7 +35,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 32, y: 32}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6256821949451640373
 CanvasRenderer:
@@ -216,7 +216,7 @@ GameObject:
   - component: {fileID: 1838741469}
   m_Layer: 5
   m_Name: InventorySlot
-  m_TagString: Untagged
+  m_TagString: Inventory Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -254,4 +254,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icon: {fileID: 6256821949451640372}
-  removeButton: {fileID: 0}

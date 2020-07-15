@@ -19,6 +19,8 @@ TagManager:
   - Tree
   - PickUpButton
   - Item Icon
+  - Inventory UI
+  - Inventory Slot
   layers:
   - Default
   - TransparentFX

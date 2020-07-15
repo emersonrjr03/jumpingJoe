@@ -8,6 +8,8 @@ public class Inventory : MonoBehaviour {
 
 	public static Inventory instance;
 
+	InventorySlot selectedSlot;
+	
 	void Awake ()
 	{
 		if (instance != null)
@@ -74,6 +76,22 @@ public class Inventory : MonoBehaviour {
 			if (onItemRemovedCallback != null)
 				onItemRemovedCallback.Invoke(item);
 		}
+	}
+	
+	public void SetSelectedSlot(InventorySlot inventorySlot) {
+		//if we had a selectedSlot before, we just undo the resize
+		if(selectedSlot != null) {
+			selectedSlot.transform.localScale -= new Vector3(0.1f, 0.1f, 0f);
+		}
+		
+		if(inventorySlot != null){
+			inventorySlot.transform.localScale += new Vector3(0.1f, 0.1f, 0f);		
+		}
+		selectedSlot = inventorySlot;
+	}
+	
+	public bool isSlotSelected(InventorySlot inventorySlot) {
+		return selectedSlot != null && selectedSlot.Equals(inventorySlot);
 	}
 
 }
