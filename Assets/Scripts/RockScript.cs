@@ -12,12 +12,16 @@ public class RockScript : MonoBehaviour
 	public float lifeBar = 100;
 	
     void OnCollisionEnter(Collision other) {
-        if(lifeBar > 0 && other.collider.tag == "Axe" && other.relativeVelocity.y != 0 && other.relativeVelocity.x == 0  && other.relativeVelocity.z == 0) {
-	        lifeBar -= 20;
-	        Debug.Log(lifeBar);
-		animationController.SetFloat("rockLifeBar", lifeBar);
-		instantiateRockPieces(1);
-
+    	if(other.collider.GetComponent<ItemPickup>() != null){
+    		Item item = other.collider.GetComponent<ItemPickup>().item;
+    	
+			Debug.Log(item.canWoodCut);
+		    if(lifeBar > 0 && item.canWoodCut && other.relativeVelocity.y != 0 && other.relativeVelocity.x == 0  && other.relativeVelocity.z == 0) {
+			    lifeBar -= item.damage;
+			    Debug.Log(lifeBar);
+				animationController.SetFloat("rockLifeBar", lifeBar);
+				instantiateRockPieces(1);
+		    }
         }
     }
     

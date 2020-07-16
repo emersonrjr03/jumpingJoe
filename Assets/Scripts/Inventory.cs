@@ -72,11 +72,11 @@ public class Inventory : MonoBehaviour {
 		// Trigger callback
 		if (onItemChangedCallback != null)
 			onItemChangedCallback.Invoke();
-		if(item.isCurrentItem){
-			// Trigger to call the clearing of the currentItem slot
-			if (onItemRemovedCallback != null)
-				onItemRemovedCallback.Invoke(item);
-		}
+		
+		// Trigger to call the clearing of the currentItem slot
+		if (onItemRemovedCallback != null)
+			onItemRemovedCallback.Invoke(item);
+	
 	}
 	
 	public void SetSelectedSlot(InventorySlot inventorySlot) {

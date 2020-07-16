@@ -10,16 +10,27 @@ public class TreeScript : MonoBehaviour
 	public GameObject branchesPrefab;
 	public Animator animationController;
 	public MeshRenderer treeMeshRenderer;
+	public HealthBar healthBar;
 	
-	public float lifeBar = 100;
+	public int initialHealth = 100;
+	
+	void Start(){
+		healthBar.setHealth(initialHealth);
+	}
 	
     void OnCollisionEnter(Collision other) {
-        if(lifeBar > 0 && other.collider.tag == "Axe" && other.relativeVelocity.y != 0 && other.relativeVelocity.x == 0  && other.relativeVelocity.z == 0) {
-	        lifeBar -= 20;
-			if(lifeBar <= 0){
-				Instantiate(stumpPrefab, stumpSpawnertransform.position, stumpSpawnertransform.rotation);
-				instantiateBranches(3);
-				animationController.Play("treeAnimation");
+    	if(other.collider.GetComponent<ItemPickup>() != null){
+    		Item item = other.collider.GetComponent<ItemPickup>().item;
+    	
+			Debug.Log(item.canWoodCut);
+			if(healthBar.getHealth() > 0 && item.canWoodCut && other.relativeVelocity.y != 0 && other.relativeVelocity.x == 0  && other.relativeVelocity.z == 0) {
+				healthBar.setHealth(healthBar.getHealth() - item.damage);
+				Debug.Log("life : " + healthBar.getHealth());
+				if(healthBar.getHealth() <= 0){
+					Instantiate(stumpPrefab, stumpSpawnertransform.position, stumpSpawnertransform.rotation);
+					instantiateBranches(3);
+					animationController.Play("treeAnimation");
+				}
 			}
         }
     }

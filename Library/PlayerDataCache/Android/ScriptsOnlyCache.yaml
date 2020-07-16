@@ -6,6 +6,7 @@ ScriptsOnlyBuild:
     - CurrentItemSlot
     - FixedButton
     - FixedJoystick
+    - GameController
     - Inventory
     - InventorySlot
     - InventoryUI
@@ -129,6 +130,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 141328}
     - Class: 114
       Script: {instanceID: 320188}
+    - Class: 114
+      Script: {instanceID: 402280}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -668,7 +671,7 @@ ScriptsOnlyBuild:
     className: RockScript
   - hash:
       serializedVersion: 2
-      Hash: b04d548399136052f80f7efa8a039d23
+      Hash: 1f7398330dcf2c6a51bf319fcc90a651
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Inventory
@@ -726,6 +729,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CurrentItemSlot
+  - hash:
+      serializedVersion: 2
+      Hash: 2d2d9cbbce0685028ea1c6c88b7fa22e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameController
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity

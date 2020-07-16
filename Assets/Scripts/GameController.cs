@@ -22,13 +22,14 @@ public class GameController : MonoBehaviour {
 	
 	public GameObject player;
 	public GameObject currentWeapon;
-	public int healthBar;
+	public HealthBar healthBar;
 
 	private GameObject playerRightHand;
 	private GameObject playerLeftHand;
 	
 	void Start(){
-		
+		healthBar.setHealth(100);
+
 		List<GameObject> matches = Utils.GetChildObjectsByTag(player.transform, "Player Right Hand");
 		if(matches.Count > 0) { 
 			playerRightHand = matches[0];
@@ -55,6 +56,22 @@ public class GameController : MonoBehaviour {
 
     	currentWeapon = (GameObject)Instantiate(newWeapon);
     	currentWeapon.transform.SetParent(playerRightHand.transform, false);;
+    }
+    
+    public int getPlayerHealth(){
+    	return healthBar.getHealth();
+    }
+    
+    public void setPlayerHealth(int health) {
+    	healthBar.setHealth(health);
+    	if(healthBar.getHealth() == 0f) {
+    		killPlayer();
+    	}
+    }
+    
+    private void killPlayer() {
+    	player.GetComponent<PlayerState>().currentPlayerState = PlayerState.Dead;
+    	player.GetComponent<PlayerMovement>().enabled = false;
     }
     
 }

@@ -7,9 +7,14 @@ public class Item : ScriptableObject {
 
 	new public string name = "New Item";	// Name of the item
 	public Sprite icon = null;				// Item icon
-	public bool isCurrentItem = false;      // Is the item default wear?
-	public ItemType itemType;
 	public GameObject prefab;
+	
+	public ItemType itemType;
+	public int damage;
+	public bool canWoodCut;
+	public bool canRockCut;
+	
+	
 	
 	// Called when the item is pressed in the inventory
 	public virtual void Use ()

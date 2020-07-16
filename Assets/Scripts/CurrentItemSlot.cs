@@ -17,10 +17,6 @@ public class CurrentItemSlot : MonoBehaviour {
 		}
 	}
 	public void PlaceItem(Item newItem) {
-		if(item != null){
-			item.isCurrentItem = false;
-		}		
-		newItem.isCurrentItem = true;
 		item = newItem;
 		icon.sprite = item.icon;
 		icon.enabled = true;
@@ -39,7 +35,6 @@ public class CurrentItemSlot : MonoBehaviour {
 	
 	public void ClearItem() {
 		if(item != null) {
-			item.isCurrentItem = false;
 			item = null;
 			icon.sprite = null;
 			icon.enabled = false;

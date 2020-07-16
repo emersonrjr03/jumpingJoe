@@ -23,6 +23,9 @@ TagManager:
   - Inventory Slot
   - Player Left Hand
   - Player Right Hand
+  - Enemy Left Hand
+  - Enemy Right Hand
+  - Enemy
   layers:
   - Default
   - TransparentFX
