@@ -8,7 +8,8 @@ public class Inventory : MonoBehaviour {
 
 	public static Inventory instance;
 
-	InventorySlot selectedSlot;
+	[HideInInspector]
+	public InventorySlot selectedSlot;
 	
 	void Awake ()
 	{

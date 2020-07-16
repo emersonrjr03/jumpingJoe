@@ -32,7 +32,10 @@ public class RockScript : MonoBehaviour
     										 Random.Range(rockPieceSpawnertransform.rotation.y - 90f, rockPieceSpawnertransform.rotation.y + 180f),
     										 Random.Range(rockPieceSpawnertransform.rotation.z - 90f, rockPieceSpawnertransform.rotation.z + 180f)
     									   );
-    		Instantiate(rockPiecePrefab, position, Quaternion.Euler(rotation));
+    		
+    		GameObject rockPiece = Instantiate(rockPiecePrefab, position, Quaternion.Euler(rotation));
+    		Rigidbody rockPieceRigidBody = rockPiece.AddComponent<Rigidbody>();
+    		rockPieceRigidBody.mass = 30;
     	}
     }
 }

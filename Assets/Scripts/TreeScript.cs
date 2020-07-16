@@ -35,7 +35,9 @@ public class TreeScript : MonoBehaviour
     										 Random.Range(branchesSpawnertransform.rotation.y - 90f, branchesSpawnertransform.rotation.y + 180f),
     										 Random.Range(branchesSpawnertransform.rotation.z - 90f, branchesSpawnertransform.rotation.z + 180f)
     									   );
-    		Instantiate(branchesPrefab, position, Quaternion.Euler(rotation));
+    		GameObject branches = Instantiate(branchesPrefab, position, Quaternion.Euler(rotation));
+    		Rigidbody branchesRigidBody = branches.AddComponent<Rigidbody>();
+    		branchesRigidBody.mass = 30;
     	}
     }
 }

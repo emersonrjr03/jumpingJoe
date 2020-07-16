@@ -6,8 +6,7 @@ using UnityEngine;
 public class Item : ScriptableObject {
 
 	new public string name = "New Item";	// Name of the item
-	public Sprite icon = null;	
-	[HideInInspector]			// Item icon
+	public Sprite icon = null;				// Item icon
 	public bool isCurrentItem = false;      // Is the item default wear?
 	public ItemType itemType;
 	public GameObject prefab;

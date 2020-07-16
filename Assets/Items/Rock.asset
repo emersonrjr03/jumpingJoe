@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Rock
   icon: {fileID: 21300000, guid: 1a56e3e1b3362bb7c993dc9418ad75fe, type: 3}
-  isCurrentItem: 0
+  isCurrentItem: 1
   itemType: 3
-  prefab: {fileID: 4680757731160225450, guid: 0fde05fa0f3321942a21896ff4f0856f, type: 3}
+  prefab: {fileID: 6611873591442946660, guid: ea90ceb9a4eb1539aad8f17b508b1afc, type: 3}

@@ -39,7 +39,9 @@ public class GameController : MonoBehaviour {
 			playerLeftHand = matches[0];
 		}
 		
-		changePlayerCurrentWeapon(currentWeapon);
+		if(currentWeapon != null){
+			changePlayerCurrentWeapon(currentWeapon);
+		}
 	} 
 	
 	public void changePlayerCurrentWeapon(Item item){
@@ -47,9 +49,12 @@ public class GameController : MonoBehaviour {
 	}
 
     public void changePlayerCurrentWeapon(GameObject newWeapon){
+    	foreach (Transform t in playerRightHand.transform) {
+			Destroy(t.gameObject);
+		}
+
     	currentWeapon = (GameObject)Instantiate(newWeapon);
-    	Debug.Log(newWeapon.transform.position);
-    	currentWeapon.transform.parent = playerRightHand.transform;
+    	currentWeapon.transform.SetParent(playerRightHand.transform, false);;
     }
     
 }

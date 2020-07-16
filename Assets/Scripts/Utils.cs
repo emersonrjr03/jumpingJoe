@@ -11,7 +11,6 @@ using UnityEngine;
 		public static List<GameObject> GetChildObjectsByTagRecursive(Transform parent, string _tag, List<GameObject> actors) {
 			for (int i = 0; i < parent.childCount; i++) {
 				Transform child = parent.GetChild(i);
-				Debug.Log(child.name + " " + child.tag);
 				if (child.tag == _tag) {
 				 actors.Add(child.gameObject);
 				}

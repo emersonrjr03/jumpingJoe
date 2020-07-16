@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEditor;
 
 public class InventorySlot : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler {
 
@@ -12,6 +13,7 @@ public class InventorySlot : MonoBehaviour, IDragHandler, IBeginDragHandler, IEn
 	
 	Inventory inventory;	// Our current inventory
 	Camera mainCamera;
+	
 	void Start () {
 		inventory = Inventory.instance;
 		Object[] cameras = FindObjectsOfType<Camera>() as UnityEngine.Object[];
@@ -70,5 +72,14 @@ public class InventorySlot : MonoBehaviour, IDragHandler, IBeginDragHandler, IEn
 			Inventory.instance.SetSelectedSlot(null);
 		}
 		Inventory.instance.Remove(item);
+	}
+	
+	public Item getItem(){
+		return item;
+	}
+	public void setSlotColor(Color32 color){
+		ColorBlock colorBlock = transform.GetChild(0).GetComponent<Button>().colors;
+		colorBlock.normalColor = color;
+		transform.GetChild(0).GetComponent<Button>().colors = colorBlock;
 	}
 }

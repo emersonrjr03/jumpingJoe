@@ -16,6 +16,11 @@ public class InventoryUI : MonoBehaviour
 	
 	Inventory inventory;	// Our current inventory
 
+	//variables to keep track of which slots contains the current items (for display styling reasons)
+	private Item currentWeapon;
+	private Item currentFood;
+	private Item currentBuilding;
+	
 	void Start () {
 		inventory = Inventory.instance;
 		inventory.onItemChangedCallback += UpdateUI;
@@ -53,33 +58,80 @@ public class InventoryUI : MonoBehaviour
 		}
 	}
 	
+	/**
+		This method loops throug all the slots, and paint the first slot that has the current item, we paint the first only
+		because we remove the item from the currentItems, after coloring the first slot
+	**/
+	public void UpdateSlotColors(){
+		InventorySlot[] slots = GetComponentsInChildren<InventorySlot>();
+		List<Item> currentItems = new List<Item>(){ currentWeapon, currentFood, currentBuilding };
+		for (int i = 0; i < slots.Length; i++) {
+			Debug.Log("item " + slots[i].getItem() + " " + (slots[i].getItem() == null ? "null" :  (currentItems.Contains(slots[i].getItem()) ? "true" : "false")));
+			if(slots[i].getItem() != null && currentItems.Contains(slots[i].getItem())){
+				Item item = slots[i].getItem();
+				currentItems.Remove(item);
+				//selected weapon item #87BAFF (azul)
+				if(item.itemType == Item.ItemType.Weapon || item.itemType == Item.ItemType.Material) {
+					Debug.Log("coloring " + item.itemType + " " + item.prefab);
+					slots[i].setSlotColor(new Color32(135, 186, 255, 255));
+				
+				//selected food item #7CAB73 (verde) 
+				} else if(item.itemType == Item.ItemType.Food) {
+					Debug.Log("coloring " + item.itemType + " " + item.prefab);
+					slots[i].setSlotColor(new Color32(124, 171, 115, 255));
+
+				//selected building item #FFBB64 (laranja)
+				} else if(item.itemType == Item.ItemType.Building) {
+					Debug.Log("coloring " + item.itemType + " " + item.prefab);
+					slots[i].setSlotColor(new Color32(255, 187, 100, 255));
+				}
+			} else {
+				slots[i].setSlotColor(new Color32(255, 255, 255, 255));
+			}
+		}
+	}
+	
 	public void UpdateCurrentItemSlotUI(Item item){
+		
 		//Just get the CurrentItemSlot component that is inside the CurrentItemSlot
 		CurrentItemSlot[] slots = new CurrentItemSlot[0];
 		if(item.itemType == Item.ItemType.Weapon || item.itemType == Item.ItemType.Material) {
 			slots = currentWeaponSlotUI.GetComponentsInChildren<CurrentItemSlot>();
+
+			currentWeapon = inventory.selectedSlot.getItem();
+			
 		} else if(item.itemType == Item.ItemType.Food) {
 			slots = currentFoodSlotUI.GetComponentsInChildren<CurrentItemSlot>();		
+
+			currentFood = inventory.selectedSlot.getItem();
 		} else if(item.itemType == Item.ItemType.Building) {
 			slots = currentBuildingSlotUI.GetComponentsInChildren<CurrentItemSlot>();
+
+			currentBuilding = inventory.selectedSlot.getItem();
 		}
 
 		for (int i = 0; i < slots.Length; i++) {
 			slots[i].PlaceItem(item);
 		}
+		UpdateSlotColors();
 	}
 	
 	public void RemoveFromCurrentItemSlotUI(Item item){
 		CurrentItemSlot[] slots = new CurrentItemSlot[0];
 		if(item.itemType == Item.ItemType.Weapon || item.itemType == Item.ItemType.Material) {
 			slots = currentWeaponSlotUI.GetComponentsInChildren<CurrentItemSlot>();
+			currentWeapon = null;
 		} else if(item.itemType == Item.ItemType.Food) {
-			slots = currentFoodSlotUI.GetComponentsInChildren<CurrentItemSlot>();		
+			slots = currentFoodSlotUI.GetComponentsInChildren<CurrentItemSlot>();
+			currentFood = null;
 		} else if(item.itemType == Item.ItemType.Building) {
 			slots = currentBuildingSlotUI.GetComponentsInChildren<CurrentItemSlot>();
+			currentBuilding = null;
 		}
 		for (int i = 0; i < slots.Length; i++) {
 			slots[i].ClearItem();
 		}
+		UpdateSlotColors();
 	}
+
 }
