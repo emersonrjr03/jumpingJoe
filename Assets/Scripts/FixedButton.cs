@@ -5,7 +5,6 @@ using UnityEngine.EventSystems;
 
 public class FixedButton : MonoBehaviour, IPointerUpHandler, IPointerDownHandler {
 	[HideInInspector]
-
 	public bool pressed;
 	
     // Start is called before the first frame update

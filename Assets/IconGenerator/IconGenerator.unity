@@ -597,8 +597,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targets:
-  - name: Branch of Life
-    obj: {fileID: 4170110183300015995, guid: 4534500d0658794d19689a90ad1f487e, type: 3}
+  - name: Pistol
+    obj: {fileID: 5460260358966909089, guid: 40eaa48cde5b9b3f0918a12b0923b26d, type: 3}
   overlays: []
   customFolder: Items
   rawIcon: {fileID: 0}

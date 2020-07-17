@@ -78,6 +78,7 @@ public class PlayerMovement : MonoBehaviour {
 			colorOnHover.fireColoring();
 			other.GetComponent<Interactable>().isInteractable = true; 
 			pickUpButton.GetComponent<Image>().enabled = true;
+			Debug.Log("enter " + other);
 		}
 	}
 	
@@ -88,6 +89,7 @@ public class PlayerMovement : MonoBehaviour {
 			colorOnHover.undoColoring();
 			other.GetComponent<Interactable>().isInteractable = false; 
 			pickUpButton.GetComponent<Image>().enabled = colliders.Count != 0;
+			Debug.Log("exit " + other);
 		}
 	}
 }

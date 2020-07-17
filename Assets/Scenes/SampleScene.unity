@@ -302,7 +302,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 40}
-  m_SizeDelta: {x: 122.86084, y: 121.08214}
+  m_SizeDelta: {x: 122, y: 122}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &115748632
 MonoBehaviour:
@@ -324,7 +324,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 115748630}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -647,6 +647,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1379981157, guid: b9de24523a11d714db3851b5f0f9d527, type: 3}
+      propertyPath: pickupButton
+      value: 
+      objectReference: {fileID: 115748632}
     - target: {fileID: 1493958779012120596, guid: b9de24523a11d714db3851b5f0f9d527,
         type: 3}
       propertyPath: m_Name
@@ -1388,7 +1392,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00012207031, y: 0}
+  m_AnchoredPosition: {x: 0.00018310547, y: 0}
   m_SizeDelta: {x: 529.1411, y: 264.13873}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &396247937
@@ -1895,7 +1899,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1836400776}
   currentWeapon: {fileID: 0}
-  healthBar: {fileID: 284836618}
 --- !u!1001 &528583481
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2048,6 +2051,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1961172894712379733, guid: ea90ceb9a4eb1539aad8f17b508b1afc,
+        type: 3}
+      propertyPath: pickupButton
+      value: 
+      objectReference: {fileID: 115748632}
     - target: {fileID: 6611873591442646596, guid: ea90ceb9a4eb1539aad8f17b508b1afc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2598,6 +2606,23 @@ MonoBehaviour:
   rightHandCollider: {fileID: 1729984307}
   leftHandCollider: {fileID: 1217625863}
   actualSpeed: 0
+--- !u!114 &886336783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886336781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 751668a7371857226a4cf4e88d4f56e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackSpeed: 1
+  damage: 5
+  armor: 0
+  maxHealth: 100
+  healthBar: {fileID: 1493797795}
 --- !u!54 &886336784
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2628,6 +2653,18 @@ CapsuleCollider:
   m_Height: 1.7628233
   m_Direction: 1
   m_Center: {x: 0, y: 0.8420752, z: 0}
+--- !u!114 &886336786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886336781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fab4730e1937c0108f6800ef5478621, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &899116115
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5005,6 +5042,18 @@ Transform:
   m_Father: {fileID: 1457496682}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1493797795 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3995400473117550406, guid: b14953694d54eea4eb66f453e525024c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1217625862}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9b5e61ad6ff4621ca2c5931007bf6ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1493878902
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5772,7 +5821,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1001675323}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1836400784
+--- !u!114 &1836400777
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5781,7 +5830,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1836400776}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df63bfc1a1a5ed29193c8a384712b7ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 751668a7371857226a4cf4e88d4f56e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackSpeed: 1
+  damage: 5
+  armor: 0
+  maxHealth: 100
+  healthBar: {fileID: 284836618}
+--- !u!114 &1836400778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836400776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fab4730e1937c0108f6800ef5478621, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!224 &1838741468 stripped
@@ -6675,6 +6741,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1380351335}
     m_Modifications:
+    - target: {fileID: 6256821949451640372, guid: be5e7f12f2973f3b89541dbfe5b2482b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6256821949966006456, guid: be5e7f12f2973f3b89541dbfe5b2482b,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
