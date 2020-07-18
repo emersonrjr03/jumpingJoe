@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 5146343284265809967}
   - component: {fileID: 6812925711446835770}
   - component: {fileID: 7658044130972757366}
+  - component: {fileID: 1588305195}
+  - component: {fileID: 1588305196}
   m_Layer: 0
   m_Name: w_pistol
   m_TagString: Projectile Weapon
@@ -94,3 +96,31 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300168, guid: fdfb5e1c4a1b339489c0eddebb1ab872, type: 3}
+--- !u!114 &1588305195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5460260358966909089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ef1904428a560087bce8fc9db683589, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isInteractable: 0
+  item: {fileID: 11400000, guid: 25a9eeade10901e669bf5418b87c5aa0, type: 2}
+--- !u!114 &1588305196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5460260358966909089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 256d407be4b942dc197f560fd274a022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 0.15294118, g: 0.90588236, b: 0.08627451, a: 0}
+  meshRenderer: {fileID: 0}

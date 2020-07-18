@@ -61,13 +61,18 @@ public class InventorySlot : MonoBehaviour, IDragHandler, IBeginDragHandler, IEn
 	public void OnEndDrag(PointerEventData eventData) {
 		if(item != null) {
 			icon.gameObject.transform.position = iconInitialPos;
-			Vector3 dropPosition = mainCamera.gameObject.transform.position - mainCamera.gameObject.GetComponent<PlayerFollow>().offset;
-			Instantiate(item.prefab, dropPosition, Quaternion.identity);
+
 			RemoveItemFromInventory(item);
 		}
 	}
 	
 	private void RemoveItemFromInventory(Item item){
+		//dropping item
+		Vector3 dropPosition = mainCamera.gameObject.transform.position - mainCamera.gameObject.GetComponent<PlayerFollow>().offset;
+		GameObject droppedItem = Instantiate(item.prefab, dropPosition, Quaternion.identity);
+		Rigidbody droppedItemRigidBody = droppedItem.AddComponent<Rigidbody>(); 
+		droppedItemRigidBody.mass = item.mass;
+		
 		if(Inventory.instance.isSlotSelected(this)){
 			Inventory.instance.SetSelectedSlot(null);
 		}

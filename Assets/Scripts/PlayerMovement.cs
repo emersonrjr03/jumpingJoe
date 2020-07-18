@@ -19,10 +19,14 @@ public class PlayerMovement : MonoBehaviour {
 	protected Joystick joystick;
 	public FixedButton jumpButton;
 	public FixedButton attackButton;
-	public FixedButton pickUpButton;
+	public PickUpEnabling pickUpEnabling;
+
+	private PlayerStats playerStats;
+
 
 	void Start(){
 		joystick = FindObjectOfType<Joystick>();
+		playerStats = GetComponent<PlayerStats>();
 	}
 	
     void FixedUpdate() {
@@ -68,28 +72,26 @@ public class PlayerMovement : MonoBehaviour {
     private bool IsGrounded() {
     	return Physics.Raycast(transform.position, Vector3.down, distToGround);
     }
-
-	private ArrayList colliders = new ArrayList();
+	
 	
 	private void OnTriggerEnter(Collider other){
-		ColorOnHover colorOnHover = other.GetComponent<ColorOnHover>();
-		if(colorOnHover != null){
-			colliders.Add(other);
-			colorOnHover.fireColoring();
-			other.GetComponent<Interactable>().isInteractable = true; 
-			pickUpButton.GetComponent<Image>().enabled = true;
-			Debug.Log("enter " + other);
+		ItemPickup itemPickup = other.GetComponent<ItemPickup>();
+		if(itemPickup != null){
+			pickUpEnabling.allItemsCollidingWithPlayer.Add(other);
+			
+		}
+	}
+	public void OnTriggerExit(Collider other){
+		ItemPickup itemPickup = other.GetComponent<ItemPickup>();
+		if(itemPickup != null){
+			pickUpEnabling.allItemsCollidingWithPlayer.Remove(other);
 		}
 	}
 	
-	private void OnTriggerExit(Collider other){
-		ColorOnHover colorOnHover = other.GetComponent<ColorOnHover>();
-		if(colorOnHover != null){
-			colliders.Remove(other);
-			colorOnHover.undoColoring();
-			other.GetComponent<Interactable>().isInteractable = false; 
-			pickUpButton.GetComponent<Image>().enabled = colliders.Count != 0;
-			Debug.Log("exit " + other);
-		}
-	}
+	//HITTING ENEMY
+	void OnCollisionEnter(Collision collision) {
+		Debug.Log(collision.transform.GetComponent<CharacterStats>());
+		playerStats.Attack(collision);
+    }
+
 }

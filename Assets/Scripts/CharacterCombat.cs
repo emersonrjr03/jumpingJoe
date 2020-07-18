@@ -18,9 +18,8 @@ public class CharacterCombat : MonoBehaviour {
 
     public void Attack(CharacterStats targetStats) {
     	if(attackCooldown <= 0f) {
-    	
-			targetStats.TakeDamage(myStats.damage);
-			attackCooldown = 1f/ myStats.attackSpeed;
+			targetStats.TakeDamage(myStats.damage + myStats.getExtraDamage());
+			attackCooldown = 1f / myStats.attackSpeed;
     	}
     }
 }

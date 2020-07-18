@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class FixedButton : MonoBehaviour, IPointerUpHandler, IPointerDownHandler {
 	[HideInInspector]
@@ -25,5 +26,13 @@ public class FixedButton : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
     
     public void OnPointerUp(PointerEventData eventData) {
     	pressed = false;
+    }
+    
+    public void hideButton(){
+    	GetComponent<Image>().enabled = false;
+    }
+    
+    public void showButton(){
+    	GetComponent<Image>().enabled = true;
     }
 }

@@ -19,3 +19,4 @@ MonoBehaviour:
   damage: 5
   canWoodCut: 1
   canRockCut: 0
+  mass: 30

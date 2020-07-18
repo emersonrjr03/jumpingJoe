@@ -10,11 +10,14 @@ public class CharacterStats : MonoBehaviour {
 	public int maxHealth = 100;
 	public HealthBar healthBar;
 	
+	public Item currentItem;
+	
 	public int currentHealth { get; private set; }
 
 	public virtual void Awake() {
 		currentHealth = maxHealth;
 	}
+	
 	// Damage the character
 	public void TakeDamage (int damage) {
 		// Subtract the armor value
@@ -27,8 +30,7 @@ public class CharacterStats : MonoBehaviour {
 		
 		healthBar.setHealth(currentHealth);
 		// If health reaches zero
-		if (currentHealth <= 0)
-		{
+		if (currentHealth <= 0) {
 			Die();
 		}
 	}
@@ -36,11 +38,15 @@ public class CharacterStats : MonoBehaviour {
 	public virtual void Die () {
 		// Die in some way
 		// This method is meant to be overwritten
-		Debug.Log(transform.name + " died.");
+	}
+	
+	public virtual int getExtraDamage() {
+		int extraDamage = 0;
 		
-		//if player
-		//GetComponent<PlayerState>().currentPlayerState = PlayerState.Dead;
-    	//GetComponent<PlayerMovement>().enabled = false;
+		if(currentItem)
+			extraDamage += currentItem.damage;
+
+		return extraDamage;
 	}
 	
 }

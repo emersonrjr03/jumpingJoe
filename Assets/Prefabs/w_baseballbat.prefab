@@ -109,7 +109,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isInteractable: 0
-  pickupButton: {fileID: 0}
   item: {fileID: 11400000, guid: e80e77c779568d7d8ae4d13ed9f8afda, type: 2}
 --- !u!114 &1991312000
 MonoBehaviour:

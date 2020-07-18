@@ -21,38 +21,13 @@ public class GameController : MonoBehaviour {
 	#endregion
 	
 	public GameObject player;
-	public GameObject currentWeapon;
-
-	private GameObject playerRightHand;
-	private GameObject playerLeftHand;
 	
 	void Start(){
-		List<GameObject> matches = Utils.GetChildObjectsByTag(player.transform, "Player Right Hand");
-		if(matches.Count > 0) { 
-			playerRightHand = matches[0];
-		}
-		
-		matches = Utils.GetChildObjectsByTag(player.transform, "Player Left Hand");
-		if(matches.Count > 0) { 
-			playerLeftHand = matches[0];
-		}
-		
-		if(currentWeapon != null){
-			changePlayerCurrentWeapon(currentWeapon);
-		}
+
 	} 
 	
 	public void changePlayerCurrentWeapon(Item item){
-		changePlayerCurrentWeapon(item.prefab);
+		player.GetComponent<PlayerStats>().changePlayerCurrentWeapon(item);
 	}
-
-    public void changePlayerCurrentWeapon(GameObject newWeapon){
-    	foreach (Transform t in playerRightHand.transform) {
-			Destroy(t.gameObject);
-		}
-
-    	currentWeapon = (GameObject)Instantiate(newWeapon);
-    	currentWeapon.transform.SetParent(playerRightHand.transform, false);
-    }
     
 }

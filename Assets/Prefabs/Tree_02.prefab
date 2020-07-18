@@ -292,7 +292,7 @@ GameObject:
   m_Name: Tree_02
   m_TagString: Tree
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4661435515762813124
@@ -394,7 +394,7 @@ MonoBehaviour:
   animationController: {fileID: 89334872}
   treeMeshRenderer: {fileID: 4661435515760519716}
   healthBar: {fileID: 1777648141486939051}
-  lifeBar: 100
+  initialHealth: 100
 --- !u!95 &89334872
 Animator:
   serializedVersion: 3

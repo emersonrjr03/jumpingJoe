@@ -11,8 +11,7 @@ public class Inventory : MonoBehaviour {
 	[HideInInspector]
 	public InventorySlot selectedSlot;
 	
-	void Awake ()
-	{
+	void Awake () {
 		if (instance != null)
 		{
 			Debug.LogWarning("More than one instance of Inventory found!");

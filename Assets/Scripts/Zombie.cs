@@ -18,7 +18,7 @@ public class Zombie : MonoBehaviour {
 	private Vector3 direction;
 	private float distance;
 	private bool isAttacking = false;
-	private CharacterCombat combat;
+	private ZombieStats zombieStats;
 	
 	Vector3 lastPosition = Vector3.zero;
 	public float actualSpeed = 0;
@@ -28,7 +28,7 @@ public class Zombie : MonoBehaviour {
         transformZombie = GetComponent<Transform>();
         animatorController = GetComponent<Animator>();
         target = GameController.instance.player.transform;
-        combat = GetComponent<CharacterCombat>();
+        zombieStats = GetComponent<ZombieStats>();
     }
 
     // Update is called once per frame
@@ -44,7 +44,7 @@ public class Zombie : MonoBehaviour {
     		animatorController.SetBool("Attacking", false);
 			MoveZombie();
     	} else {
-    		//play atack animation
+    		//play atack animation if we are in a good distance from the player
     		if(!AnimationIsPlaying("Attacking")) {
     			animatorController.SetBool("Attacking", true);
     		}
@@ -68,19 +68,7 @@ public class Zombie : MonoBehaviour {
     }
        
     void OnCollisionEnter(Collision collision) {
-    	if(!isAttacking){
-			foreach (ContactPoint c in collision.contacts) {
-		        if(c.thisCollider == rightHandCollider || c.thisCollider == leftHandCollider) {
-			        isAttacking = true;
-		        	break;
-		        }
-		    }
-		    
-		    if(isAttacking && collision.transform.tag == "Player"){
-		    	combat.Attack(collision.transform.GetComponent<CharacterStats>());
-		    	//collision.transform.GetComponent<PlayerController>().takeDamage(attackForce);
-		    }
-		}
+    	zombieStats.Attack(collision);
     }
     //using this approach to avoid one attack hitting twice
     void OnCollisionExit(Collision collision) {

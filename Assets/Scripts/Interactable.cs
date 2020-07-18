@@ -14,7 +14,7 @@ public class Interactable : MonoBehaviour {
 	[HideInInspector]
 	public bool isInteractable = false;	// Have we already interacted with the object?
 
-	public FixedButton pickupButton;
+	private FixedButton pickupButton;
 	
 	void Start() {
 		//finding pickup button on screen and assign to the item, so we don't have to assign for every prefab.

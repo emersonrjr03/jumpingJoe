@@ -13,6 +13,7 @@ public class Item : ScriptableObject {
 	public int damage;
 	public bool canWoodCut;
 	public bool canRockCut;
+	public int mass;
 	
 	
 	

@@ -20,6 +20,7 @@ public class CurrentItemSlot : MonoBehaviour {
 		item = newItem;
 		icon.sprite = item.icon;
 		icon.enabled = true;
+		//equipping weapon here
 		AfterPlacingItem();
 	}
 	

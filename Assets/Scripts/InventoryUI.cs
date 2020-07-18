@@ -11,8 +11,6 @@ public class InventoryUI : MonoBehaviour
 	public GameObject currentBuildingSlotUI;
 	
 	public Transform itemsParent;	// The parent object of all the items
-	public FixedButton openInventoryButton;
-	public FixedButton closeInventoryButton;
 	
 	Inventory inventory;	// Our current inventory
 
