@@ -3,6 +3,8 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - AnimControl
     - Billboard
+    - CharacterCombat
+    - CharacterStats
     - ColorOnHover
     - CurrentItemSlot
     - FixedButton
@@ -14,13 +16,15 @@ ScriptsOnlyBuild:
     - InventoryUI
     - Item
     - ItemPickup
-    - PlayerController
+    - PickUpEnabling
     - PlayerFollow
     - PlayerMovement
     - PlayerState
+    - PlayerStats
     - RockScript
     - TreeScript
     - Zombie
+    - ZombieStats
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     UnityEditor.Graphs.dll:
@@ -88,63 +92,69 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11312}
     - Class: 114
-      Script: {instanceID: 11332}
+      Script: {instanceID: 11314}
     - Class: 114
-      Script: {instanceID: 11444}
+      Script: {instanceID: 11316}
     - Class: 114
-      Script: {instanceID: 11492}
+      Script: {instanceID: 11318}
     - Class: 114
-      Script: {instanceID: 11584}
+      Script: {instanceID: 11338}
     - Class: 114
-      Script: {instanceID: 11918}
+      Script: {instanceID: 11354}
     - Class: 114
-      Script: {instanceID: 12304}
+      Script: {instanceID: 11458}
     - Class: 114
-      Script: {instanceID: 12384}
+      Script: {instanceID: 11460}
     - Class: 114
-      Script: {instanceID: 12596}
+      Script: {instanceID: 11602}
     - Class: 114
-      Script: {instanceID: 12600}
+      Script: {instanceID: 11880}
     - Class: 114
-      Script: {instanceID: 12756}
+      Script: {instanceID: 11938}
     - Class: 114
-      Script: {instanceID: 12794}
+      Script: {instanceID: 11954}
     - Class: 114
-      Script: {instanceID: 12892}
+      Script: {instanceID: 12078}
     - Class: 114
-      Script: {instanceID: 12966}
+      Script: {instanceID: 12308}
     - Class: 114
-      Script: {instanceID: 13150}
+      Script: {instanceID: 12440}
     - Class: 114
-      Script: {instanceID: 13180}
+      Script: {instanceID: 12536}
     - Class: 114
-      Script: {instanceID: 36126}
+      Script: {instanceID: 12562}
     - Class: 114
-      Script: {instanceID: 49372}
+      Script: {instanceID: 12664}
     - Class: 114
-      Script: {instanceID: 49384}
+      Script: {instanceID: 12668}
     - Class: 114
-      Script: {instanceID: 49784}
+      Script: {instanceID: 12688}
     - Class: 114
-      Script: {instanceID: 49790}
+      Script: {instanceID: 12690}
     - Class: 114
-      Script: {instanceID: 69116}
+      Script: {instanceID: 12750}
     - Class: 114
-      Script: {instanceID: 69126}
+      Script: {instanceID: 12838}
     - Class: 114
-      Script: {instanceID: 141328}
+      Script: {instanceID: 12872}
     - Class: 114
-      Script: {instanceID: 320188}
+      Script: {instanceID: 12880}
     - Class: 114
-      Script: {instanceID: 402280}
+      Script: {instanceID: 12968}
     - Class: 114
-      Script: {instanceID: 520686}
+      Script: {instanceID: 12988}
     - Class: 114
-      Script: {instanceID: 528300}
+      Script: {instanceID: 13068}
     - Class: 114
-      Script: {instanceID: 552486}
+      Script: {instanceID: 13184}
     - Class: 114
-      Script: {instanceID: 626830}
+      Script: {instanceID: 13240}
+    - Class: 114
+      Script: {instanceID: 13256}
+    - Class: 114
+      Script: {instanceID: 13258}
+    - Class: 114
+      Script: {instanceID: 13938}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -174,6 +184,24 @@ ScriptsOnlyBuild:
   scriptHashData:
   - hash:
       serializedVersion: 2
+      Hash: aeb62f729c52c814dec86c47dcac1471
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Text
+  - hash:
+      serializedVersion: 2
+      Hash: 7072231382eb3c4871b3dd75ad0227e1
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Slider
+  - hash:
+      serializedVersion: 2
+      Hash: 5f1752ed2092162f016c19510c28a8b9
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Button
+  - hash:
+      serializedVersion: 2
       Hash: 89f9a1b4c64db9559e39f4a2e3bfaadd
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -190,6 +218,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: CanvasScaler
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CharacterCombat
   - hash:
       serializedVersion: 2
       Hash: c42672c997f8be6b1aa86a927ebea785
@@ -222,10 +256,16 @@ ScriptsOnlyBuild:
     className: PlayerQuitHandler
   - hash:
       serializedVersion: 2
-      Hash: 347942f3871ab0a75a5228bf9c21a76b
+      Hash: f5b1f0490ed15d1389ea60591f8aba64
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerMovement
+  - hash:
+      serializedVersion: 2
+      Hash: a1bf635396aab30e2e06177ccab020a6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: InventorySlot
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -238,12 +278,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: ActivationTrack
-  - hash:
-      serializedVersion: 2
-      Hash: aeb62f729c52c814dec86c47dcac1471
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Text
   - hash:
       serializedVersion: 2
       Hash: 499fd23433e68e265d153aa6b95d0047
@@ -262,6 +296,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: TouchInputModule
+  - hash:
+      serializedVersion: 2
+      Hash: 6c20657734a2e79a8642721bee2a9eeb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerController
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -318,6 +358,12 @@ ScriptsOnlyBuild:
     className: AnimationTrack
   - hash:
       serializedVersion: 2
+      Hash: 76324ab1f897577732aef93512d85ad7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Interactable
+  - hash:
+      serializedVersion: 2
       Hash: cf9f5cf2c3145a37ac07f00e50e460f9
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -348,10 +394,22 @@ ScriptsOnlyBuild:
     className: Mask
   - hash:
       serializedVersion: 2
+      Hash: 076abf662592dc18f67d03c91fab9040
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ItemPickup
+  - hash:
+      serializedVersion: 2
       Hash: caa533b001ae39b864ba8425019e2268
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Shadow
+  - hash:
+      serializedVersion: 2
+      Hash: c388c033429f7beb09c1b6472967047f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PickUpEnabling
   - hash:
       serializedVersion: 2
       Hash: cc4274b586df3c02688bac01b88bd16c
@@ -384,6 +442,12 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
+      Hash: bad074114744e487fbfe8588d5e02267
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ZombieStats
+  - hash:
+      serializedVersion: 2
       Hash: ce669872a2be11bc686ea22961d8a3bb
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -414,22 +478,28 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAnimator
   - hash:
       serializedVersion: 2
+      Hash: bad074114744e487fbfe8588d5e02267
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CharacterStats
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
     className: RemoteTestResultSender
   - hash:
       serializedVersion: 2
+      Hash: a9f51a623f6d48930ee8e9ee0f19709c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: RockScript
+  - hash:
+      serializedVersion: 2
       Hash: 4fd8bf02e3089425d3502e26c44ba31a
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextContainer
-  - hash:
-      serializedVersion: 2
-      Hash: 5f1752ed2092162f016c19510c28a8b9
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Button
   - hash:
       serializedVersion: 2
       Hash: f84d945e5e1ca985698660fc26e9657f
@@ -450,6 +520,12 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
+      Hash: f0a87bb5f7774d2bf57c62989bda5915
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Zombie
+  - hash:
+      serializedVersion: 2
       Hash: 783f593b9380cf72d0f7ebfd4a0d4bcd
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -460,6 +536,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: SignalReceiver
+  - hash:
+      serializedVersion: 2
+      Hash: 1028c39545bcfa841aaab54121e69a47
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: HealthBar
   - hash:
       serializedVersion: 2
       Hash: 5ad4aa237d47ac2bab17bacb672edf7a
@@ -516,6 +598,24 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
+      Hash: a994c1006066c8286afff994c2ad6e6b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Item
+  - hash:
+      serializedVersion: 2
+      Hash: 29f4cd46fbcb081d7f580de776cedbd0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Billboard
+  - hash:
+      serializedVersion: 2
+      Hash: e58fb31af705ad685030be9720a048c9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ColorOnHover
+  - hash:
+      serializedVersion: 2
       Hash: 8001a5f7502aab37e42206da015e6914
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -534,6 +634,18 @@ ScriptsOnlyBuild:
     className: AudioTrack
   - hash:
       serializedVersion: 2
+      Hash: badc8d355a63a7b0291547b12e2277fc
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: IconGeneratorUIExample
+  - hash:
+      serializedVersion: 2
+      Hash: 1f7398330dcf2c6a51bf319fcc90a651
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Inventory
+  - hash:
+      serializedVersion: 2
       Hash: ae83e830e7a90c0aff918c4c2e520825
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -550,6 +662,18 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools
     className: BeforeAfterTestCommandState
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ColliderHit
+  - hash:
+      serializedVersion: 2
+      Hash: a1bf635396aab30e2e06177ccab020a6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CurrentItemSlot
   - hash:
       serializedVersion: 2
       Hash: bf76c747817676978f4f514bf33dc51d
@@ -600,6 +724,12 @@ ScriptsOnlyBuild:
     className: BaseInput
   - hash:
       serializedVersion: 2
+      Hash: bad074114744e487fbfe8588d5e02267
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerStats
+  - hash:
+      serializedVersion: 2
       Hash: caa533b001ae39b864ba8425019e2268
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -630,6 +760,12 @@ ScriptsOnlyBuild:
     className: PlaymodeTestsController
   - hash:
       serializedVersion: 2
+      Hash: 83e769eee07fc231384c812eedbb8224
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameController
+  - hash:
+      serializedVersion: 2
       Hash: 2aeeec1b1a144c469cd2d37776bc2315
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -648,6 +784,12 @@ ScriptsOnlyBuild:
     className: StandaloneInputModule
   - hash:
       serializedVersion: 2
+      Hash: d88933b9a114ffccdf5e888d0d6516dc
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: InventoryUI
+  - hash:
+      serializedVersion: 2
       Hash: aa88ae22474df55295327e4ee99e5a24
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -660,76 +802,10 @@ ScriptsOnlyBuild:
     className: SignalEmitter
   - hash:
       serializedVersion: 2
-      Hash: 7072231382eb3c4871b3dd75ad0227e1
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Slider
-  - hash:
-      serializedVersion: 2
       Hash: 0fd6822f6177297bd0eb4d83cc7a9030
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: ToggleGroup
-  - hash:
-      serializedVersion: 2
-      Hash: c3d3430df9e3ea95e3e3d587961390fb
-    assemblyName: Unity.Timeline.dll
-    namespaceName: UnityEngine.Timeline
-    className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: a9f51a623f6d48930ee8e9ee0f19709c
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: RockScript
-  - hash:
-      serializedVersion: 2
-      Hash: 1f7398330dcf2c6a51bf319fcc90a651
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Inventory
-  - hash:
-      serializedVersion: 2
-      Hash: c7580d8a0653383d4a5e5d8f6ee1ab89
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Item
-  - hash:
-      serializedVersion: 2
-      Hash: 5efa8e331b1ebd3527ebd5602d76311a
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: InventoryUI
-  - hash:
-      serializedVersion: 2
-      Hash: a1bf635396aab30e2e06177ccab020a6
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: InventorySlot
-  - hash:
-      serializedVersion: 2
-      Hash: 4d6da503e42733488e74745be41d8232
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Interactable
-  - hash:
-      serializedVersion: 2
-      Hash: e58fb31af705ad685030be9720a048c9
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ColorOnHover
-  - hash:
-      serializedVersion: 2
-      Hash: ca839713e9bfc5d4f4fc2340192ff725
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ItemPickup
-  - hash:
-      serializedVersion: 2
-      Hash: badc8d355a63a7b0291547b12e2277fc
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: IconGeneratorUIExample
   - hash:
       serializedVersion: 2
       Hash: b1397d731656620ba1a710519c4e02a2
@@ -738,46 +814,10 @@ ScriptsOnlyBuild:
     className: IconGenerator
   - hash:
       serializedVersion: 2
-      Hash: a1bf635396aab30e2e06177ccab020a6
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: CurrentItemSlot
-  - hash:
-      serializedVersion: 2
-      Hash: c899083180cc659e46a4e53dd6931b2f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: GameController
-  - hash:
-      serializedVersion: 2
-      Hash: 1028c39545bcfa841aaab54121e69a47
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: HealthBar
-  - hash:
-      serializedVersion: 2
-      Hash: 29f4cd46fbcb081d7f580de776cedbd0
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Billboard
-  - hash:
-      serializedVersion: 2
-      Hash: f0a87bb5f7774d2bf57c62989bda5915
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Zombie
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ColliderHit
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: PlayerController
+      Hash: c3d3430df9e3ea95e3e3d587961390fb
+    assemblyName: Unity.Timeline.dll
+    namespaceName: UnityEngine.Timeline
+    className: PlayableTrack
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity

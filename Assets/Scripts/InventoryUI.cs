@@ -64,23 +64,19 @@ public class InventoryUI : MonoBehaviour
 		InventorySlot[] slots = GetComponentsInChildren<InventorySlot>();
 		List<Item> currentItems = new List<Item>(){ currentWeapon, currentFood, currentBuilding };
 		for (int i = 0; i < slots.Length; i++) {
-			Debug.Log("item " + slots[i].getItem() + " " + (slots[i].getItem() == null ? "null" :  (currentItems.Contains(slots[i].getItem()) ? "true" : "false")));
 			if(slots[i].getItem() != null && currentItems.Contains(slots[i].getItem())){
 				Item item = slots[i].getItem();
 				currentItems.Remove(item);
 				//selected weapon item #87BAFF (azul)
 				if(item.itemType == Item.ItemType.Weapon || item.itemType == Item.ItemType.Material) {
-					Debug.Log("coloring " + item.itemType + " " + item.prefab);
 					slots[i].setSlotColor(new Color32(135, 186, 255, 255));
 				
 				//selected food item #7CAB73 (verde) 
 				} else if(item.itemType == Item.ItemType.Food) {
-					Debug.Log("coloring " + item.itemType + " " + item.prefab);
 					slots[i].setSlotColor(new Color32(124, 171, 115, 255));
 
 				//selected building item #FFBB64 (laranja)
 				} else if(item.itemType == Item.ItemType.Building) {
-					Debug.Log("coloring " + item.itemType + " " + item.prefab);
 					slots[i].setSlotColor(new Color32(255, 187, 100, 255));
 				}
 			} else {

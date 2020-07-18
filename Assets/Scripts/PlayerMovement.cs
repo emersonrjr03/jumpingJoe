@@ -90,7 +90,6 @@ public class PlayerMovement : MonoBehaviour {
 	
 	//HITTING ENEMY
 	void OnCollisionEnter(Collision collision) {
-		Debug.Log(collision.transform.GetComponent<CharacterStats>());
 		playerStats.Attack(collision);
     }
 

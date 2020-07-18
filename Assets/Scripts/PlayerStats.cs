@@ -53,7 +53,7 @@ public class PlayerStats : CharacterStats {
 		        	break;
 		        }
 		    }
-		    Debug.Log("tem target");
+		    isAttacking &= Utils.AnimationIsPlaying(GetComponent<Animator>(), "melee_combat_attack");
 		    if(isAttacking && collision.transform.tag == "Enemy"){
 		    	GetComponent<CharacterCombat>().Attack(targetStatus);
 		    }

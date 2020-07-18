@@ -26,7 +26,6 @@ public class CharacterStats : MonoBehaviour {
 
 		// Damage the character
 		currentHealth -= damage;
-		Debug.Log(transform.name + " takes " + damage + " damage.");
 		
 		healthBar.setHealth(currentHealth);
 		// If health reaches zero

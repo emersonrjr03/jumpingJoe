@@ -44,8 +44,8 @@ public class Zombie : MonoBehaviour {
     		animatorController.SetBool("Attacking", false);
 			MoveZombie();
     	} else {
-    		//play atack animation if we are in a good distance from the player
-    		if(!AnimationIsPlaying("Attacking")) {
+    		//play atack animation if we are in a good distance from the player and if we are not dead
+    		if(!Utils.AnimationIsPlaying(animatorController, "Attacking")) {
     			animatorController.SetBool("Attacking", true);
     		}
     	}
@@ -58,13 +58,6 @@ public class Zombie : MonoBehaviour {
     	direction = (target.position - transform.position).normalized;
     	Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
     	transform.rotation = Quaternion.Slerp(transform.rotation,  lookRotation, Time.deltaTime * 5f);
-    }
-
-    bool AnimatorIsPlaying(){
-	    return animatorController.GetCurrentAnimatorStateInfo(0).length > animatorController.GetCurrentAnimatorStateInfo(0).normalizedTime;
-	}
-    bool AnimationIsPlaying(string stateName){
-    	return AnimatorIsPlaying() && animatorController.GetCurrentAnimatorStateInfo(0).IsName(stateName);
     }
        
     void OnCollisionEnter(Collision collision) {

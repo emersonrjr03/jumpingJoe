@@ -1262,7 +1262,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00018310547, y: 0}
+  m_AnchoredPosition: {x: 0.00024414062, y: 0}
   m_SizeDelta: {x: 529.1411, y: 264.13873}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &396247937
@@ -2868,6 +2868,15 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 963194228}
+    - target: {fileID: 1836400777, guid: 6fb37f825ee63264b9c2600bf1a52006, type: 3}
+      propertyPath: attackSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1836400777, guid: 6fb37f825ee63264b9c2600bf1a52006, type: 3}
+      propertyPath: currentItem
+      value: 
+      objectReference: {fileID: 11400000, guid: e80e77c779568d7d8ae4d13ed9f8afda,
+        type: 2}
     - target: {fileID: 7478225697115775088, guid: 6fb37f825ee63264b9c2600bf1a52006,
         type: 3}
       propertyPath: m_LocalPosition.x

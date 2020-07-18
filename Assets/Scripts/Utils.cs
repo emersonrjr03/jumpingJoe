@@ -19,5 +19,12 @@ using UnityEngine;
 				}
 		 	}
 		 	return actors;
-		}   
+		}
+		
+		public static bool AnimatorIsPlaying(Animator animatorController){
+	    	return animatorController.GetCurrentAnimatorStateInfo(0).length > animatorController.GetCurrentAnimatorStateInfo(0).normalizedTime;
+		}
+		public static bool AnimationIsPlaying(Animator animatorController, string stateName){
+			return AnimatorIsPlaying(animatorController) && animatorController.GetCurrentAnimatorStateInfo(0).IsName(stateName);
+		}
  }

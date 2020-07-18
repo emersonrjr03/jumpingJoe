@@ -3,25 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ZombieStats : CharacterStats {
-	private GameObject playerRightHand;
+	private GameObject zombieRightHand;
 	private Collider rightHandCollider;
 	
-	private GameObject playerLeftHand;
+	private GameObject zombieLeftHand;
 	private Collider leftHandCollider;
 
 	public override void Awake() {
 		base.Awake();
 
-		List<GameObject> matches = Utils.GetChildObjectsByTag(transform, "Player Right Hand");
+		List<GameObject> matches = Utils.GetChildObjectsByTag(transform, "Enemy Right Hand");
 		if(matches.Count > 0) { 
-			playerRightHand = matches[0];
-			rightHandCollider = playerRightHand.GetComponent<Collider>();
+			zombieRightHand = matches[0];
+			rightHandCollider = zombieRightHand.GetComponent<Collider>();
 		}
 		
-		matches = Utils.GetChildObjectsByTag(transform, "Player Left Hand");
+		matches = Utils.GetChildObjectsByTag(transform, "Enemy Left Hand");
 		if(matches.Count > 0) {
-			playerLeftHand = matches[0];
-			leftHandCollider = playerLeftHand.GetComponent<Collider>();
+			zombieLeftHand = matches[0];
+			leftHandCollider = zombieLeftHand.GetComponent<Collider>();
 		}
 		
 	}
@@ -32,13 +32,13 @@ public class ZombieStats : CharacterStats {
 		
 	}
 	
-	public void changePlayerCurrentWeapon(Item item){
-    	foreach (Transform t in playerRightHand.transform) {
+	public void changeZombieCurrentWeapon(Item item){
+    	foreach (Transform t in zombieRightHand.transform) {
 			Destroy(t.gameObject);
 		}
 
     	GameObject newWeapon = (GameObject)Instantiate(item.prefab);
-    	newWeapon.transform.SetParent(playerRightHand.transform, false);
+    	newWeapon.transform.SetParent(zombieRightHand.transform, false);
 		rightHandCollider = newWeapon.GetComponent<Collider>();
 		
     	base.currentItem = item;
@@ -54,7 +54,7 @@ public class ZombieStats : CharacterStats {
 		        	break;
 		        }
 		    }
-
+			
 		    if(isAttacking && collision.transform.tag == "Player"){
 		    	GetComponent<CharacterCombat>().Attack(collision.transform.GetComponent<CharacterStats>());
 		    }
