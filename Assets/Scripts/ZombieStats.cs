@@ -26,6 +26,7 @@ public class ZombieStats : CharacterStats {
 		
 	}
 	public override void Die () {
+		GetComponent<Animator>().SetBool("Attacking", false);
 		GetComponent<Animator>().SetBool("Dead", true);
 		GetComponent<Zombie>().enabled = false;
 		
