@@ -12,7 +12,6 @@ public class PlayerMovement : MonoBehaviour {
 	public float rotationSpeed = 20;
 	public float jumpForce = 100f;
 	public float distToGround = 0.5f;
-	public float animationTime = 2;
 
 	public PlayerState playerState;
 	
