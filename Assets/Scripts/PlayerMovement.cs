@@ -14,14 +14,13 @@ public class PlayerMovement : MonoBehaviour {
 	public float distToGround = 0.5f;
 
 	public PlayerState playerState;
-	
-	protected Joystick joystick;
+	[HideInInspector]
+	public Joystick joystick;
 	public FixedButton jumpButton;
 	public FixedButton attackButton;
 	public PickUpEnabling pickUpEnabling;
 
 	private PlayerStats playerStats;
-
 
 	void Start(){
 		joystick = FindObjectOfType<Joystick>();

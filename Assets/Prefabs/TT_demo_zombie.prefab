@@ -89,8 +89,8 @@ GameObject:
   - component: {fileID: 886336784}
   - component: {fileID: 886336785}
   - component: {fileID: 886336782}
-  - component: {fileID: 886336783}
   - component: {fileID: 886336786}
+  - component: {fileID: 886336783}
   m_Layer: 0
   m_Name: TT_demo_zombie
   m_TagString: Enemy
@@ -146,7 +146,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
@@ -183,24 +183,6 @@ MonoBehaviour:
   rightHandCollider: {fileID: 1729984307}
   leftHandCollider: {fileID: 3513390823173188384}
   actualSpeed: 0
---- !u!114 &886336783
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 856601670117699726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 751668a7371857226a4cf4e88d4f56e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackSpeed: 1
-  damage: 5
-  armor: 0
-  maxHealth: 100
-  healthBar: {fileID: 3995400473117550406}
-  currentItem: {fileID: 0}
 --- !u!114 &886336786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,6 +195,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fab4730e1937c0108f6800ef5478621, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &886336783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856601670117699726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd2671d53fec5763b8f9ebe1684d5ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackSpeed: 1
+  damage: 5
+  armor: 0
+  maxHealth: 100
+  healthBar: {fileID: 3995400473117550406}
+  currentItem: {fileID: 0}
 --- !u!1 &856601670117699840
 GameObject:
   m_ObjectHideFlags: 0
