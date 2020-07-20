@@ -26,6 +26,7 @@ TagManager:
   - Enemy Left Hand
   - Enemy Right Hand
   - Enemy
+  - Point Light
   layers:
   - Default
   - TransparentFX

@@ -36,6 +36,7 @@ public class PlayerMovement : MonoBehaviour {
 	}
 	
     void Update() {
+    
 		checkJoystickAndSetState(joystick);
 
 		if(jumpButton.pressed && IsGrounded()) {
@@ -73,14 +74,14 @@ public class PlayerMovement : MonoBehaviour {
 	
 	
 	private void OnTriggerEnter(Collider other){
-		ItemPickup itemPickup = other.GetComponent<ItemPickup>();
+		Interactable itemPickup = other.GetComponent<Interactable>();
 		if(itemPickup != null){
 			pickUpEnabling.allItemsCollidingWithPlayer.Add(other);
 			
 		}
 	}
 	public void OnTriggerExit(Collider other){
-		ItemPickup itemPickup = other.GetComponent<ItemPickup>();
+		Interactable itemPickup = other.GetComponent<Interactable>();
 		if(itemPickup != null){
 			pickUpEnabling.allItemsCollidingWithPlayer.Remove(other);
 		}
