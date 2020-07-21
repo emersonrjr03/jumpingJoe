@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CraftingTable : Interactable {
+	public CraftingUI craftingUI;
+	
    // When the player interacts with the item
 	public override void Interact()
 	{
 		base.Interact();
 
-		Debug.Log("Interacting");
+		craftingUI.showCraftingUI();
 	}
 	
 	private void OnTriggerEnter(Collider other){
@@ -31,18 +33,10 @@ public class CraftingTable : Interactable {
 	private void OnTriggerExit(Collider other){
 		//Debug.Log("exit " + other);
 		if(other.tag == "Player") {
+			craftingUI.hideCraftingUI();
 			GetComponentInChildren<Light>().enabled = false;
 			GetComponent<ColorOnHover>().undoColoring();
 			isInteractable = false;
 		}
-		/*ColorOnHover colorOnHover = other.GetComponent<ColorOnHover>();
-		if(colorOnHover != null){
-			Debug.Log(colliders.Count);
-			colliders.Remove(other);
-			colorOnHover.undoColoring();
-			other.GetComponent<Interactable>().isInteractable = false; 
-			pickUpButton.GetComponent<Image>().enabled = colliders.Count != 0;
-			
-		}*/
 	}
 }

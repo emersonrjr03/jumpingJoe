@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 /* The base item class. All items should derive from this. */
 
@@ -14,12 +15,11 @@ public class Item : ScriptableObject {
 	public bool canWoodCut;
 	public bool canRockCut;
 	public int mass;
-	
+	public List<Item> components;
 	
 	
 	// Called when the item is pressed in the inventory
-	public virtual void Use ()
-	{
+	public virtual void Use () {
 		/*if(itemType == ItemType.Weapon || itemType == ItemType.Material) {
 			isCurrentWeapon = true;
 		}
@@ -28,9 +28,22 @@ public class Item : ScriptableObject {
 		Debug.Log("Using item " + name + " on quick access");
 	}
 
-	public void RemoveFromInventory ()
-	{
+	public void RemoveFromInventory () {
 		Inventory.instance.Remove(this);
+	}
+	
+	public Dictionary<Item, int> getRecipe() {
+		Dictionary<Item, int> recipe = new Dictionary<Item, int>();
+		if(components != null) {
+			foreach(Item item in components) {
+				if(recipe.ContainsKey(item)) {
+					recipe[item] = recipe[item] + 1;				
+				} else {
+					recipe.Add(item, 1);
+				}
+			}
+		}
+		return recipe;
 	}
 	
 	public enum ItemType { Weapon, Food, Building, Material }

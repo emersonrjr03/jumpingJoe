@@ -20,3 +20,6 @@ MonoBehaviour:
   canWoodCut: 0
   canRockCut: 0
   mass: 30
+  components:
+  - {fileID: 11400000, guid: 0e2f14368833e5fcbb3f25d82ae31180, type: 2}
+  - {fileID: 11400000, guid: 0e2f14368833e5fcbb3f25d82ae31180, type: 2}
