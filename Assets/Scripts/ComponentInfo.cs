@@ -16,7 +16,6 @@ public class ComponentInfo : MonoBehaviour {
 		icon.sprite = item.icon;
 		quantityNeededText.text = quantityNeeded.ToString();
 		quantityInInventoryText.text = quantityInInventory.ToString();
-		Debug.Log(item + quantityInInventory.ToString() + " >= " + quantityNeeded + " = " + (quantityInInventory >= quantityNeeded));
 		enableComponent(quantityInInventory >= quantityNeeded);
     }
     

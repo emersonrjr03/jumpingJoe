@@ -4,8 +4,10 @@ ScriptsOnlyBuild:
     - AnimControl
     - Billboard
     - CharacterCombat
-    - CharacterStats
     - ColorOnHover
+    - ComponentInfo
+    - CraftingTable
+    - CraftingUI
     - CurrentItemSlot
     - FixedButton
     - FixedJoystick
@@ -16,11 +18,13 @@ ScriptsOnlyBuild:
     - InventoryUI
     - Item
     - ItemPickup
+    - ItemRecipeLine
     - PickUpEnabling
     - PlayerFollow
     - PlayerMovement
     - PlayerState
     - PlayerStats
+    - ResultItemInfo
     - RockScript
     - TreeScript
     - Zombie
@@ -132,29 +136,39 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12694}
     - Class: 114
-      Script: {instanceID: 12754}
+      Script: {instanceID: 12718}
     - Class: 114
-      Script: {instanceID: 12842}
+      Script: {instanceID: 12756}
     - Class: 114
-      Script: {instanceID: 12876}
+      Script: {instanceID: 12844}
     - Class: 114
-      Script: {instanceID: 12884}
+      Script: {instanceID: 12878}
     - Class: 114
-      Script: {instanceID: 12972}
+      Script: {instanceID: 12886}
     - Class: 114
-      Script: {instanceID: 12992}
+      Script: {instanceID: 12974}
     - Class: 114
-      Script: {instanceID: 13072}
+      Script: {instanceID: 12994}
     - Class: 114
-      Script: {instanceID: 13188}
+      Script: {instanceID: 13074}
     - Class: 114
-      Script: {instanceID: 13244}
+      Script: {instanceID: 13190}
     - Class: 114
-      Script: {instanceID: 13260}
+      Script: {instanceID: 13246}
     - Class: 114
       Script: {instanceID: 13262}
     - Class: 114
-      Script: {instanceID: 13946}
+      Script: {instanceID: 13264}
+    - Class: 114
+      Script: {instanceID: 13962}
+    - Class: 114
+      Script: {instanceID: 33846}
+    - Class: 114
+      Script: {instanceID: 39482}
+    - Class: 114
+      Script: {instanceID: 62064}
+    - Class: 114
+      Script: {instanceID: 63048}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -256,7 +270,7 @@ ScriptsOnlyBuild:
     className: PlayerQuitHandler
   - hash:
       serializedVersion: 2
-      Hash: 95c3a85204fef39c186de801850a3ecf
+      Hash: 4a3fb17d3cf7d024055342b70cdcc1b2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerMovement
@@ -598,7 +612,7 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
-      Hash: a994c1006066c8286afff994c2ad6e6b
+      Hash: dd2639b3639860ae4596e66bcaa57fcd
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Item
@@ -608,6 +622,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Billboard
+  - hash:
+      serializedVersion: 2
+      Hash: 9dfe00e5933483a995aa9da76e0a4ca1
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CraftingTable
   - hash:
       serializedVersion: 2
       Hash: e58fb31af705ad685030be9720a048c9
@@ -818,6 +838,30 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 5b3a1da71dcfa8a838921f544cd5b0c0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CraftingUI
+  - hash:
+      serializedVersion: 2
+      Hash: 896a7f52d608d36c0899cc8c0b67a979
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ItemRecipeLine
+  - hash:
+      serializedVersion: 2
+      Hash: de5022b0071c0bca752537ca10638922
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ComponentInfo
+  - hash:
+      serializedVersion: 2
+      Hash: cc2966f1f1e27e3810706a3a27b61b1b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ResultItemInfo
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity

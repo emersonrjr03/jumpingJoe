@@ -14,6 +14,9 @@ public class InventoryUI : MonoBehaviour
 	
 	Inventory inventory;	// Our current inventory
 
+	private Vector2 horizontalSize = new Vector2(530f, 225f);
+	private Vector2 verticalSize = new Vector2(273f, 490f);
+
 	//variables to keep track of which slots contains the current items (for display styling reasons)
 	private Item currentWeapon;
 	private Item currentFood;
@@ -32,8 +35,21 @@ public class InventoryUI : MonoBehaviour
 	}
 	
 	public void showInventoryUI(){
+		if(isSomePanelOpened()) {
+			inventoryUI.GetComponent<RectTransform>().sizeDelta = verticalSize;
+		} else {
+			inventoryUI.GetComponent<RectTransform>().sizeDelta = horizontalSize;
+		}
 		inventoryUI.SetActive(true);
 			UpdateUI();
+	}
+	
+	public bool isSomePanelOpened(){
+		bool result = false;
+		
+		result |= GetComponent<CraftingUI>().craftingUI.activeInHierarchy;
+		//and in the future we can add more UIs here
+		return result;
 	}
 	
 	public void hideInventoryUI(){

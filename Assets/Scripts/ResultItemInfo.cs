@@ -11,6 +11,12 @@ public class ResultItemInfo : MonoBehaviour {
 	private Button resultBackgroundBtn;
 	private Item resultItem;
 	
+	private Inventory inventory;
+	private CraftingUI craftingUI;
+	void Start() {
+		inventory = Inventory.instance;
+		craftingUI = transform.root.GetComponent<CraftingUI>();
+	}
 	public void AddResult(Item item, int quantityCanBeMade) {
 		resultItem = item;
 		icon.enabled = true;
@@ -24,6 +30,11 @@ public class ResultItemInfo : MonoBehaviour {
 		//Here maybe we can call the craftingUI passing the item, so it can access the inventory to remove the items need to craft the item
 		//and add the resultItem to the inventory
 		Debug.Log("Crafting Item " + resultItem);
+		foreach(Item component in resultItem.components) {
+			inventory.Remove(component);
+		}
+		inventory.Add(resultItem);
+		craftingUI.updateItems();
 	}
 	
     private void enableComponent(bool enable){

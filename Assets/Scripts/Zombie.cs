@@ -17,7 +17,6 @@ public class Zombie : MonoBehaviour {
 	
 	private Vector3 direction;
 	private float distance;
-	private bool isAttacking = false;
 	private ZombieStats zombieStats;
 	
 	Vector3 lastPosition = Vector3.zero;
@@ -62,10 +61,6 @@ public class Zombie : MonoBehaviour {
        
     void OnCollisionEnter(Collision collision) {
     	zombieStats.Attack(collision);
-    }
-    //using this approach to avoid one attack hitting twice
-    void OnCollisionExit(Collision collision) {
-    	isAttacking = false;
     }
 
 }

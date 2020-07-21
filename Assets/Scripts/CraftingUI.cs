@@ -19,10 +19,16 @@ public class CraftingUI : MonoBehaviour {
     public void showCraftingUI(){
 		craftingUI.SetActive(true);
 		updateItems();
+		if(GetComponent<InventoryUI>().inventoryUI.activeInHierarchy){
+    		GetComponent<InventoryUI>().showInventoryUI();
+    	}
 	}
 	
 	public void hideCraftingUI(){
 		craftingUI.SetActive(false);
+		if(GetComponent<InventoryUI>().inventoryUI.activeInHierarchy){
+			GetComponent<InventoryUI>().hideInventoryUI();
+		}
 	}
 	
 	public void updateItems(){

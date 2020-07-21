@@ -586,8 +586,8 @@ MonoBehaviour:
   rotationSpeed: 10
   jumpForce: 3
   distToGround: 0.5
-  animationTime: 2
   playerState: {fileID: 605990079}
+  joystick: {fileID: 0}
   jumpButton: {fileID: 0}
   attackButton: {fileID: 0}
   pickUpEnabling: {fileID: 0}
