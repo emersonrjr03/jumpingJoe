@@ -9,8 +9,10 @@ public class ResultItemInfo : MonoBehaviour {
 	
 	private Image resultBackgroundImg;
 	private Button resultBackgroundBtn;
-
+	private Item resultItem;
+	
 	public void AddResult(Item item, int quantityCanBeMade) {
+		resultItem = item;
 		icon.enabled = true;
 		icon.sprite = item.icon;
 		quantityCanBeMadeText.text = quantityCanBeMade.ToString();
@@ -18,6 +20,12 @@ public class ResultItemInfo : MonoBehaviour {
 		enableComponent(quantityCanBeMade > 0);
 	}
 
+	public void craftItem() {
+		//Here maybe we can call the craftingUI passing the item, so it can access the inventory to remove the items need to craft the item
+		//and add the resultItem to the inventory
+		Debug.Log("Crafting Item " + resultItem);
+	}
+	
     private void enableComponent(bool enable){
     	if(enable) {
     		getResultBackgroundBtn().interactable = true;
