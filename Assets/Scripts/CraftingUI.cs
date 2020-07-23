@@ -9,14 +9,18 @@ public class CraftingUI : MonoBehaviour {
 	public GameObject ItemRecipeLine;
 	
 	public List<Item> craftableItems;
-	public Inventory inventory;
+
+	private Inventory inventory;
+	private int craftTableLevel;
 	
 	// Start is called before the first frame update
     void Start() {
     	inventory = Inventory.instance;
     }
     
-    public void showCraftingUI(){
+    public void showCraftingUI(int level){
+    	craftTableLevel = level;
+
 		craftingUI.SetActive(true);
 		updateItems();
 		if(GetComponent<InventoryUI>().inventoryUI.activeInHierarchy){
@@ -36,11 +40,13 @@ public class CraftingUI : MonoBehaviour {
 			Destroy(child.gameObject);
 		}
 		foreach(Item item in craftableItems){
-			AddToCrafting(item);
+			if(item.crafTableLevelNeededToCraft <= craftTableLevel){
+				AddItemToCraftingUI(item);			
+			}
 		}
 	}
 	
-	void AddToCrafting(Item item) {
+	void AddItemToCraftingUI(Item item) {
 		GameObject newItemRecipeLine = Instantiate (ItemRecipeLine) as GameObject;
 		newItemRecipeLine.GetComponent<ItemRecipeLine>().AddItemRecipe(item, inventory.items);
 		newItemRecipeLine.transform.SetParent (itemsRecipeParent, false);

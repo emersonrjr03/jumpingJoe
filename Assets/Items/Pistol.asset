@@ -20,3 +20,10 @@ MonoBehaviour:
   canWoodCut: 0
   canRockCut: 0
   mass: 30
+  crafTableLevelNeededToCraft: 3
+  components:
+  - {fileID: 11400000, guid: 0e2f14368833e5fcbb3f25d82ae31180, type: 2}
+  - {fileID: 11400000, guid: 0e2f14368833e5fcbb3f25d82ae31180, type: 2}
+  - {fileID: 11400000, guid: aa29a8095ca00b20090c5fe3fcea163f, type: 2}
+  - {fileID: 11400000, guid: aa29a8095ca00b20090c5fe3fcea163f, type: 2}
+  - {fileID: 11400000, guid: aa29a8095ca00b20090c5fe3fcea163f, type: 2}

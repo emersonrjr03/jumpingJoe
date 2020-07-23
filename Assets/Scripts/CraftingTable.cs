@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class CraftingTable : Interactable {
 	public CraftingUI craftingUI;
+	public int level = 0;
 	
    // When the player interacts with the item
 	public override void Interact()
 	{
 		base.Interact();
-
-		craftingUI.showCraftingUI();
+		craftingUI.showCraftingUI(level);
 	}
 	
 	private void OnTriggerEnter(Collider other){

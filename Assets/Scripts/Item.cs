@@ -15,6 +15,7 @@ public class Item : ScriptableObject {
 	public bool canWoodCut;
 	public bool canRockCut;
 	public int mass;
+	public int crafTableLevelNeededToCraft;
 	public List<Item> components;
 	
 	
