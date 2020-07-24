@@ -62,12 +62,15 @@ public class CraftingUI : MonoBehaviour {
 		newItemRecipeLine.transform.SetParent (itemsRecipeParent, false);
 	}
 
-	public void AddMaterialToUpgrade(Item item) {
+	public bool AddMaterialToUpgrade(Item item) {
 		//check inventory if we have enougth item
 		if(inventory.hasAtLeastThatAmountOfItemsInTheInventory(item, 1)){
 			//add one more to the current amount of needed materials
 			craftTable.AddMaterialToUpgrade(item, 1);
 			inventory.Remove(item);
+			return true;
+		} else {
+			return false;
 		}
 	}
 	
@@ -78,9 +81,17 @@ public class CraftingUI : MonoBehaviour {
 	public void showUpgradeCraftTableDlg() {
 		//calculate and set the amount needed of each item.
 		
-		//ItemsNeededForUpgradeParent
+
+		hidePreviousOpenedDialog();
+		
 		updateItemsNeeded(upgradeDlg.transform.GetChild(2));
 		upgradeDlg.SetActive(true);
+	}
+	
+	private void hidePreviousOpenedDialog(){
+		upgradeDlg.transform.GetChild(4).gameObject.SetActive(false);
+		CanvasGroup cvGroup = upgradeDlg.transform.GetChild(4).GetComponent<CanvasGroup>();
+		cvGroup.alpha = 1;
 	}
 	
 	private void updateItemsNeeded(Transform parent) {

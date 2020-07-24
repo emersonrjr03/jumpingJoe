@@ -232,3 +232,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInteractable: 0
   level: 2
+  quantityForNextLevel: 0300000003000000
+  itemsForNextLevel:
+  - {fileID: 11400000, guid: 0e2f14368833e5fcbb3f25d82ae31180, type: 2}
+  - {fileID: 11400000, guid: aa29a8095ca00b20090c5fe3fcea163f, type: 2}
+  currentQuantityForNextLevel: 0000000000000000

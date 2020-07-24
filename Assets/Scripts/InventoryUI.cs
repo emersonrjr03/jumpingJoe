@@ -31,8 +31,8 @@ public class InventoryUI : MonoBehaviour
 	private GameObject statisticsPanelGO;
 	private Text rocksCountTxt;
 	private Text branchesCountTxt;
-	private const int craftTableAmountRocksNeeded = 2;
-	private const int craftTableAmountBranchesNeeded = 2;
+	private const int craftTableAmountRocksNeeded = 10;
+	private const int craftTableAmountBranchesNeeded = 10;
 	private int rocksCount = 0;
 	private int branchesCount = 0;
 	private bool craftTableAlreadyCrafted;
@@ -136,7 +136,30 @@ public class InventoryUI : MonoBehaviour
 		return rocksCount >= craftTableAmountRocksNeeded && branchesCount >= craftTableAmountBranchesNeeded;
 	}
 	
+	private void removeRocksAndBranchesFromInventoryForCraftingTable(){
+		int removedRocks = 0;
+		int removedBranches = 0;
+		List<Item> toBeRemoved = inventory.items.FindAll(item => {
+			if(item.name == "Rock" && removedRocks != craftTableAmountRocksNeeded){
+				removedRocks++;
+				return true;
+			} else if(item.name == "Branch" && removedBranches != craftTableAmountBranchesNeeded){
+				removedBranches++;
+				return true;
+			} else {
+				return false;
+			}
+		});
+		
+		
+		foreach(Item item in toBeRemoved) {
+			inventory.Remove(item);
+		}
+	}
+	
 	public void craftCraftTable(Transform player){
+		removeRocksAndBranchesFromInventoryForCraftingTable();
+
 		GameObject craftTable = Instantiate(craftTableLevel1Prefab, new Vector3(player.position.x, 
 																				player.position.y + 0.8f, 
 																				player.position.z), craftTableLevel1Prefab.transform.rotation);

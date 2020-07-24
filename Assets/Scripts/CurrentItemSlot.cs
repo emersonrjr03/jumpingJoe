@@ -11,10 +11,11 @@ public class CurrentItemSlot : MonoBehaviour {
 	
 	public void Start(){
 		
-		InventoryUI[] inventoryUIArray = transform.parent.parent.gameObject.GetComponentsInChildren<InventoryUI>();
-		for (int i = 0; i < inventoryUIArray.Length; i++) {
+		
+		inventoryUI = transform.root.GetComponent<InventoryUI>();
+		/*for (int i = 0; i < inventoryUIArray.Length; i++) {
 			inventoryUI = inventoryUIArray[0]; 
-		}
+		}*/
 	}
 	public void PlaceItem(Item newItem) {
 		item = newItem;

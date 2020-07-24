@@ -19,6 +19,7 @@ ScriptsOnlyBuild:
     - Item
     - ItemPickup
     - ItemRecipeLine
+    - MaterialNeededToUpgradeLine
     - PickUpEnabling
     - PlayerFollow
     - PlayerMovement
@@ -35,10 +36,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -96,85 +95,87 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11316}
+      Script: {instanceID: 11338}
     - Class: 114
-      Script: {instanceID: 11318}
-    - Class: 114
-      Script: {instanceID: 11320}
-    - Class: 114
-      Script: {instanceID: 11322}
+      Script: {instanceID: 11340}
     - Class: 114
       Script: {instanceID: 11342}
     - Class: 114
-      Script: {instanceID: 11358}
+      Script: {instanceID: 11344}
     - Class: 114
-      Script: {instanceID: 11462}
+      Script: {instanceID: 11364}
     - Class: 114
-      Script: {instanceID: 11464}
+      Script: {instanceID: 11380}
     - Class: 114
-      Script: {instanceID: 11556}
+      Script: {instanceID: 11436}
     - Class: 114
-      Script: {instanceID: 11608}
+      Script: {instanceID: 11486}
     - Class: 114
-      Script: {instanceID: 11712}
+      Script: {instanceID: 11488}
     - Class: 114
-      Script: {instanceID: 11888}
+      Script: {instanceID: 11580}
     - Class: 114
-      Script: {instanceID: 11946}
+      Script: {instanceID: 11632}
     - Class: 114
-      Script: {instanceID: 11964}
+      Script: {instanceID: 11736}
     - Class: 114
-      Script: {instanceID: 12088}
+      Script: {instanceID: 11912}
     - Class: 114
-      Script: {instanceID: 12168}
+      Script: {instanceID: 11962}
     - Class: 114
-      Script: {instanceID: 12318}
+      Script: {instanceID: 11972}
     - Class: 114
-      Script: {instanceID: 12450}
+      Script: {instanceID: 11990}
     - Class: 114
-      Script: {instanceID: 12512}
+      Script: {instanceID: 12114}
     - Class: 114
-      Script: {instanceID: 12548}
+      Script: {instanceID: 12194}
+    - Class: 114
+      Script: {instanceID: 12344}
+    - Class: 114
+      Script: {instanceID: 12476}
+    - Class: 114
+      Script: {instanceID: 12538}
     - Class: 114
       Script: {instanceID: 12574}
     - Class: 114
-      Script: {instanceID: 12676}
-    - Class: 114
-      Script: {instanceID: 12680}
-    - Class: 114
-      Script: {instanceID: 12700}
+      Script: {instanceID: 12600}
     - Class: 114
       Script: {instanceID: 12702}
     - Class: 114
+      Script: {instanceID: 12706}
+    - Class: 114
       Script: {instanceID: 12726}
     - Class: 114
-      Script: {instanceID: 12764}
+      Script: {instanceID: 12728}
     - Class: 114
-      Script: {instanceID: 12852}
+      Script: {instanceID: 12752}
     - Class: 114
-      Script: {instanceID: 12886}
+      Script: {instanceID: 12790}
     - Class: 114
-      Script: {instanceID: 12894}
+      Script: {instanceID: 12878}
     - Class: 114
-      Script: {instanceID: 12956}
+      Script: {instanceID: 12912}
     - Class: 114
-      Script: {instanceID: 12984}
+      Script: {instanceID: 12920}
     - Class: 114
-      Script: {instanceID: 13004}
+      Script: {instanceID: 12982}
     - Class: 114
-      Script: {instanceID: 13084}
+      Script: {instanceID: 13010}
     - Class: 114
-      Script: {instanceID: 13200}
+      Script: {instanceID: 13030}
     - Class: 114
-      Script: {instanceID: 13256}
+      Script: {instanceID: 13110}
     - Class: 114
-      Script: {instanceID: 13272}
+      Script: {instanceID: 13226}
     - Class: 114
-      Script: {instanceID: 13274}
+      Script: {instanceID: 13282}
     - Class: 114
-      Script: {instanceID: 14036}
+      Script: {instanceID: 13298}
     - Class: 114
-      Script: {instanceID: 86860}
+      Script: {instanceID: 13300}
+    - Class: 114
+      Script: {instanceID: 14384}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -262,6 +263,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_Dropdown
+  - hash:
+      serializedVersion: 2
+      Hash: 50e0c29192b5f6f8cc160a88a54e0c21
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ShowWhenCloser
   - hash:
       serializedVersion: 2
       Hash: e7a73f5f78ba6445195ec23b74a1ce2d
@@ -372,7 +379,7 @@ ScriptsOnlyBuild:
     className: PhysicsRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 705f7ec2055776211ad06daa9667d9f0
+      Hash: 2b89f924eab29ee510840735d1c751d2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CraftingUI
@@ -436,6 +443,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Shadow
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MaterialNeededToUpgradeLine
   - hash:
       serializedVersion: 2
       Hash: c388c033429f7beb09c1b6472967047f
@@ -648,7 +661,7 @@ ScriptsOnlyBuild:
     className: Billboard
   - hash:
       serializedVersion: 2
-      Hash: a548ccfb9315916f441d75c0dd293ce3
+      Hash: a1ff2525bf0addd83d8418ac6b25253f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CraftingTable
@@ -868,12 +881,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 50e0c29192b5f6f8cc160a88a54e0c21
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ShowWhenCloser
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity

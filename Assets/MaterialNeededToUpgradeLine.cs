@@ -49,12 +49,40 @@ public class MaterialNeededToUpgradeLine : MonoBehaviour {
     }
     
     public void addMaterialToUpgrade(){
-    	craftingUI.AddMaterialToUpgrade(itemNeeded);
-    	addToCurrentQuantity(1);
-    	checkAndDisableAddMaterialToUpgradeBtn();
-    	checkAmountsAndEnableUpgradeButton();
+    	if(craftingUI.AddMaterialToUpgrade(itemNeeded)) {
+			addToCurrentQuantity(1);
+			checkAndDisableAddMaterialToUpgradeBtn();
+			checkAmountsAndEnableUpgradeButton();
+    	} else {
+			showMsg("Not enougth materials");    	
+    	}
     }
     
+    void showMsg(string msg) {
+		transform.parent.parent.GetChild(4).GetChild(0).GetComponent<Text>().text = msg;
+		transform.parent.parent.GetChild(4).gameObject.SetActive(true);
+		CanvasGroup cvGroup = transform.parent.parent.GetChild(4).GetComponent<CanvasGroup>();
+		cvGroup.alpha = 1;
+        StartCoroutine(disableMsg(3));
+    }
+    
+	IEnumerator disableMsg(int sec) {
+		CanvasGroup cvGroup = transform.parent.parent.GetChild(4).GetComponent<CanvasGroup>();
+
+		yield return doFade(cvGroup, cvGroup.alpha, 0, sec);
+
+		transform.parent.parent.GetChild(4).gameObject.SetActive(false);
+	}
+	
+	IEnumerator doFade(CanvasGroup canvGroup, float start, float end, float duration) {
+		float counter = 0f;
+		while(counter < duration) {
+			counter += Time.deltaTime;
+			canvGroup.alpha = Mathf.Lerp(start, end, counter / duration);
+			yield return null;
+		}
+	}
+     
     private void checkAmountsAndEnableUpgradeButton(){
     	if(craftingTable.canUpgradeCraftTable()) {
 			transform.parent.parent.GetChild(3).GetComponent<Button>().interactable = true;
