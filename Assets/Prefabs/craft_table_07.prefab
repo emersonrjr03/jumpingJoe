@@ -135,7 +135,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isInteractable: 0
-  craftingUI: {fileID: 0}
   level: 7
 --- !u!64 &939252079335106569
 MeshCollider:

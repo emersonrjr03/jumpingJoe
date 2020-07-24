@@ -27,4 +27,27 @@ using UnityEngine;
 		public static bool AnimationIsPlaying(Animator animatorController, string stateName){
 			return AnimatorIsPlaying(animatorController) && animatorController.GetCurrentAnimatorStateInfo(0).IsName(stateName);
 		}
+
+		public static bool hasAtLeast(Item itemToLookFor, List<Item> items, int atLeast) {
+			int count = 0;
+			foreach(Item i in items) {
+				if(i.Equals(itemToLookFor)) {
+					count++;
+					if(count >= atLeast) {
+						return true;
+					}
+				}
+			}
+			return false;
+		}
+
+		public static int countHowManyOfThisItem(Item itemToLookFor, List<Item> items) {
+			int count = 0;
+			foreach(Item i in items) {
+				if(i.Equals(itemToLookFor)) {
+					count++;		
+				}
+			}
+			return count;
+		}
  }

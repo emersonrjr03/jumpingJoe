@@ -16,7 +16,7 @@ public class Interactable : MonoBehaviour {
 
 	private FixedButton pickupButton;
 	
-	void Start() {
+	protected virtual void Start() {
 		//finding pickup button on screen and assign to the item, so we don't have to assign for every prefab.
 		if(pickupButton == null){
 			Object[] objects = FindObjectsOfType<FixedButton>() as UnityEngine.Object[];

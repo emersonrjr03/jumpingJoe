@@ -3,16 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CraftingTable : Interactable {
-	public CraftingUI craftingUI;
+	private CraftingUI craftingUI;
 	public int level = 0;
 	
+	public int[] quantityForNextLevel;
+	public Item[] itemsForNextLevel;
+	public int[] currentQuantityForNextLevel;
+
+	protected override void Start() {
+		base.Start();
+		if(craftingUI == null) {
+			craftingUI = GameObject.FindGameObjectsWithTag("Main Canvas")[0].GetComponent<CraftingUI>();
+		}		
+	}
    // When the player interacts with the item
 	public override void Interact()
 	{
 		base.Interact();
-		craftingUI.showCraftingUI(level);
+		craftingUI.showCraftingUI(this);
 	}
 	
+	public void AddMaterialToUpgrade(Item item, int quantity){
+		currentQuantityForNextLevel[System.Array.IndexOf(itemsForNextLevel,item)] += quantity;
+	}
+	
+	public bool canUpgradeCraftTable(){
+		for(int i = 0; i < quantityForNextLevel.Length; i++) {
+			if(quantityForNextLevel[i] != currentQuantityForNextLevel[i]){
+				return false;
+			}
+		}
+		return true;
+	}
 	private void OnTriggerEnter(Collider other){
 		if(other.tag == "Player") {
 			GetComponentInChildren<Light>().enabled = true;

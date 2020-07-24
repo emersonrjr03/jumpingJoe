@@ -94,4 +94,7 @@ public class Inventory : MonoBehaviour {
 		return selectedSlot != null && selectedSlot.Equals(inventorySlot);
 	}
 
+	public bool hasAtLeastThatAmountOfItemsInTheInventory(Item itemToLookFor, int amount) {
+		return Utils.hasAtLeast(itemToLookFor, items, amount);
+	}
 }

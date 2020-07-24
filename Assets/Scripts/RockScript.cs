@@ -39,7 +39,7 @@ public class RockScript : MonoBehaviour
     		
     		GameObject rockPiece = Instantiate(rockPiecePrefab, position, Quaternion.Euler(rotation));
     		Rigidbody rockPieceRigidBody = rockPiece.AddComponent<Rigidbody>();
-    		rockPieceRigidBody.mass = 30;
+    		rockPiece.GetComponent<Rigidbody>().mass = 30;
     	}
     }
 }

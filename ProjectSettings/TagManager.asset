@@ -27,6 +27,7 @@ TagManager:
   - Enemy Right Hand
   - Enemy
   - Point Light
+  - Main Canvas
   layers:
   - Default
   - TransparentFX

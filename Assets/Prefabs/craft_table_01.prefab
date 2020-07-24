@@ -210,8 +210,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isInteractable: 0
-  craftingUI: {fileID: 0}
   level: 1
+  quantityForNextLevel: 0300000003000000
+  itemForNextLevel:
+  - {fileID: 11400000, guid: aa29a8095ca00b20090c5fe3fcea163f, type: 2}
+  - {fileID: 11400000, guid: 0e2f14368833e5fcbb3f25d82ae31180, type: 2}
+  currentQuantityForNextLevel: 0000000000000000
 --- !u!114 &3427036663851075871
 MonoBehaviour:
   m_ObjectHideFlags: 0

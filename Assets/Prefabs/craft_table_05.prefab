@@ -147,7 +147,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isInteractable: 0
-  craftingUI: {fileID: 0}
   level: 5
 --- !u!1 &5591018364386873143
 GameObject:

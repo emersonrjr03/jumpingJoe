@@ -12,6 +12,11 @@ public class InventoryUI : MonoBehaviour
 	
 	public Transform itemsParent;	// The parent object of all the items
 	
+
+	
+	public GameObject statisticsToCraftCraftTableContainer;
+	public GameObject craftTableLevel1Prefab;
+	
 	Inventory inventory;	// Our current inventory
 
 	private Vector2 horizontalSize = new Vector2(530f, 225f);
@@ -22,11 +27,27 @@ public class InventoryUI : MonoBehaviour
 	private Item currentFood;
 	private Item currentBuilding;
 	
+	private GameObject craftCraftTableBtnGO;
+	private GameObject statisticsPanelGO;
+	private Text rocksCountTxt;
+	private Text branchesCountTxt;
+	private const int craftTableAmountRocksNeeded = 2;
+	private const int craftTableAmountBranchesNeeded = 2;
+	private int rocksCount = 0;
+	private int branchesCount = 0;
+	private bool craftTableAlreadyCrafted;
+	
 	void Start () {
 		inventory = Inventory.instance;
 		inventory.onItemChangedCallback += UpdateUI;
 		inventory.onItemEquipedCallback += UpdateCurrentItemSlotUI;
 		inventory.onItemRemovedCallback += RemoveFromCurrentItemSlotUI;
+		
+		craftTableAlreadyCrafted = false;
+		craftCraftTableBtnGO = statisticsToCraftCraftTableContainer.transform.GetChild(1).gameObject;
+		statisticsPanelGO = statisticsToCraftCraftTableContainer.transform.GetChild(2).gameObject;
+		rocksCountTxt = statisticsPanelGO.transform.GetChild(1).GetComponent<Text>();
+		branchesCountTxt = statisticsPanelGO.transform.GetChild(3).GetComponent<Text>();
 	}
 
 	// Check to see if we should open/close the inventory
@@ -35,13 +56,16 @@ public class InventoryUI : MonoBehaviour
 	}
 	
 	public void showInventoryUI(){
+		updateCraftTableStatistics();
 		if(isSomePanelOpened()) {
 			inventoryUI.GetComponent<RectTransform>().sizeDelta = verticalSize;
+			statisticsToCraftCraftTableContainer.SetActive(false);
 		} else {
+			showOrNotCraftTableStatistics();
 			inventoryUI.GetComponent<RectTransform>().sizeDelta = horizontalSize;
 		}
 		inventoryUI.SetActive(true);
-			UpdateUI();
+		UpdateUI();
 	}
 	
 	public bool isSomePanelOpened(){
@@ -62,7 +86,7 @@ public class InventoryUI : MonoBehaviour
 	// This is called using a delegate on the Inventory.
 	public void UpdateUI () {
 		InventorySlot[] slots = GetComponentsInChildren<InventorySlot>();
-
+	
 		for (int i = 0; i < slots.Length; i++) {
 			if (i < inventory.items.Count) {
 				slots[i].AddItem(inventory.items[i]);
@@ -70,6 +94,54 @@ public class InventoryUI : MonoBehaviour
 				slots[i].ClearSlot();
 			}
 		}
+	}
+
+	private void showOrNotCraftTableStatistics(){
+		if(craftTableAlreadyCrafted){
+			statisticsToCraftCraftTableContainer.SetActive(false);
+		} else {
+			statisticsToCraftCraftTableContainer.SetActive(true);
+		}
+	}
+
+	public void updateCraftTableStatistics(){
+		if(craftTableAlreadyCrafted){
+			showOrNotCraftTableStatistics();
+		} else {
+			rocksCount = 0;
+			branchesCount = 0;
+			foreach(Item item in inventory.items) {
+				if(item.name == "Rock"){
+					rocksCount++;
+				} else if(item.name == "Branch"){
+					branchesCount++;
+				}
+			}
+			
+			if(canCraftACraftTable()){
+				craftCraftTableBtnGO.SetActive(true);
+				statisticsPanelGO.SetActive(false);
+				
+			} else {
+				craftCraftTableBtnGO.SetActive(false);
+				statisticsPanelGO.SetActive(true);
+
+				rocksCountTxt.text = rocksCount.ToString() + "/" + craftTableAmountRocksNeeded.ToString();
+				branchesCountTxt.text = branchesCount.ToString() + "/" + craftTableAmountBranchesNeeded.ToString();
+			}
+		}
+	}
+
+	private bool canCraftACraftTable(){
+		return rocksCount >= craftTableAmountRocksNeeded && branchesCount >= craftTableAmountBranchesNeeded;
+	}
+	
+	public void craftCraftTable(Transform player){
+		GameObject craftTable = Instantiate(craftTableLevel1Prefab, new Vector3(player.position.x, 
+																				player.position.y + 0.8f, 
+																				player.position.z), craftTableLevel1Prefab.transform.rotation);
+		craftTableAlreadyCrafted = true;
+		hideInventoryUI();
 	}
 	
 	/**
