@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a342b1fa1fc0cf9afa1866b9b95a1dd9, type: 3}
+  m_Name: WoodSword
+  m_EditorClassIdentifier: 
+  name: Wood Sword
+  icon: {fileID: 21300000, guid: de01779342fb07b16aeea92093b59038, type: 3}
+  prefab: {fileID: 8801715957931649236, guid: 3314cb7826739f2a29affbfa68283b48, type: 3}
+  itemType: 0
+  damage: 40
+  canWoodCut: 0
+  canRockCut: 0
+  mass: 30
+  crafTableLevelNeededToCraft: 3
+  components:
+  - {fileID: 11400000, guid: 0e2f14368833e5fcbb3f25d82ae31180, type: 2}
+  - {fileID: 11400000, guid: 0e2f14368833e5fcbb3f25d82ae31180, type: 2}
+  - {fileID: 11400000, guid: 0e2f14368833e5fcbb3f25d82ae31180, type: 2}

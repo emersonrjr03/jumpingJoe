@@ -21,13 +21,23 @@ public class GameController : MonoBehaviour {
 	#endregion
 	
 	public GameObject player;
-	
+	public GroundPlacementController groundPlacementController;
 	void Start(){
-
 	} 
 	
 	public void changePlayerCurrentWeapon(Item item){
 		player.GetComponent<PlayerStats>().changePlayerCurrentWeapon(item);
 	}
-    
+	
+	public void StartMovingObjectOnGround(GameObject obj){
+		groundPlacementController.StartMovingObjectOnGround(obj);
+	}
+	
+	public void PlaceObjectOnGround() {
+		groundPlacementController.PlaceObject();
+	}
+	
+	public void UnplaceObjectFromGround(GameObject obj) {
+		groundPlacementController.UnplacePlaceableItem(obj);
+	}
 }

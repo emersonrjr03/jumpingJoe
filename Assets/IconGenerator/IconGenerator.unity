@@ -597,8 +597,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targets:
-  - name: Pistol
-    obj: {fileID: 5460260358966909089, guid: 40eaa48cde5b9b3f0918a12b0923b26d, type: 3}
+  - name: WoodSword
+    obj: {fileID: 8801715957931649236, guid: 3314cb7826739f2a29affbfa68283b48, type: 3}
   overlays: []
   customFolder: Items
   rawIcon: {fileID: 0}

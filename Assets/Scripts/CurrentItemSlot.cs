@@ -27,8 +27,10 @@ public class CurrentItemSlot : MonoBehaviour {
 	
 	public void UseItem() {
 		if(item != null) {
-			if(item.itemType != Item.ItemType.Weapon && item.itemType != Item.ItemType.Material) {
+			if(item.itemType == Item.ItemType.Food) {
 				item.Use();
+			} else if(item.itemType == Item.ItemType.Building) {
+				inventoryUI.placeBuildingObject(item);
 			}
 		} else {
 			inventoryUI.showInventoryUI();

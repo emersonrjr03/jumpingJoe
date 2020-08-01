@@ -16,7 +16,9 @@ public class InventoryUI : MonoBehaviour
 	
 	public GameObject statisticsToCraftCraftTableContainer;
 	public GameObject craftTableLevel1Prefab;
-	
+
+	public GroundPlacementController groundPlacementController;
+		
 	Inventory inventory;	// Our current inventory
 
 	private Vector2 horizontalSize = new Vector2(530f, 225f);
@@ -31,8 +33,8 @@ public class InventoryUI : MonoBehaviour
 	private GameObject statisticsPanelGO;
 	private Text rocksCountTxt;
 	private Text branchesCountTxt;
-	private const int craftTableAmountRocksNeeded = 10;
-	private const int craftTableAmountBranchesNeeded = 10;
+	private const int craftTableAmountRocksNeeded = 2;
+	private const int craftTableAmountBranchesNeeded = 2;
 	private int rocksCount = 0;
 	private int branchesCount = 0;
 	private bool craftTableAlreadyCrafted;
@@ -96,6 +98,12 @@ public class InventoryUI : MonoBehaviour
 		}
 	}
 
+	public void placeBuildingObject(Item item) {
+		groundPlacementController.HandleObjectPlaceament(item.prefab);
+		inventory.Remove(item);
+		RemoveFromCurrentItemSlotUI(item);
+	}
+	
 	private void showOrNotCraftTableStatistics(){
 		if(craftTableAlreadyCrafted){
 			statisticsToCraftCraftTableContainer.SetActive(false);
